@@ -1,0 +1,1 @@
+powershell ./StopGravitateDevQuartz.ps1

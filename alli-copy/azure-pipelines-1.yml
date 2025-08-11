@@ -1,0 +1,50 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: 'Alliance.Wholesale.Gravitate.sln'
+  projectPath: 'Custom.Gravitate.Notification/Custom.Gravitate.Notification.csproj'
+  buildPlatform: 'AnyCpu'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+# Build the project
+- task: VSBuild@1
+  inputs:
+    solution: '$(projectPath)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+# Copy build output to the staging directory
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/Custom.Gravitate.Notification/bin/$(buildConfiguration)'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/Custom.Gravitate.Notification'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/Custom.Gravitate.Notification/Templates'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/Custom.Gravitate.Notification/Templates'
+
+# Copy Shell Scripts to the staging directory
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/Custom.Gravitate.Notification/ShellScripts'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/ShellScripts'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'

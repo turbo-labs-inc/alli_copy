@@ -1,0 +1,6 @@
+﻿@using Microsoft.Ajax.Utilities
+@{
+    var defaultLayout = @ViewContext.Controller.ViewData["DefaultLayout"]?.ToString();
+    var specificLayout = @ViewContext.Controller.ViewData["Layout"]?.ToString();
+    Layout = !specificLayout.IsNullOrWhiteSpace() ? specificLayout : !defaultLayout.IsNullOrWhiteSpace() ? defaultLayout : "~/Views/Shared/ScalableMaster.cshtml";
+}

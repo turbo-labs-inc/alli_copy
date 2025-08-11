@@ -1,0 +1,1 @@
+powershell ./StartGravitateDevQuartz.ps1

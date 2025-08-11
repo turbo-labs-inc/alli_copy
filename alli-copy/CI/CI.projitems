@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>71112376-1bbd-493f-96ab-1bdeb25d4377</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CI</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Automation\LlblgenPro.RightAngleAdapter.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Automation\LlblgenPro.GravitateAdapter.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Automation\PublishCoreAndRebuild.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\CLEAN_CORE_PACKAGES.bat" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\ConfigApp\ConfigApp_FileDeploy.bat" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\GravitateFileTemplater.exe" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\GravitateFileTemplater.pdb" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\quartz.input" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\quartz_deploy.bat" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\StartQuartz.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\StartQuartzProd.bat" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\StopQuartz.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\StopQuartzProd.bat" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\wcf.input" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\wcf_deploy.bat" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\website.input" />
+    <None Include="$(MSBuildThisFileDirectory)Shell\DeployScripts\website_deploy.bat" />
+    <None Include="$(MSBuildThisFileDirectory)StartGravitateDevQuartz.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)StopGravitateDevQuartz.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\GenerateTemplates_All.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\GenerateTemplates_ConfigApp.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\GenerateTemplates_Quartz.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\GenerateTemplates_WCF.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\GenerateTemplates_WebApi.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\GenerateTemplates_Website.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\GravitateFileTemplater.exe" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\GravitateFileTemplater.pdb" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\ConfigApp\ConfigApp.internal.qa.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\ConfigApp\ConfigApp.prod.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\ConfigApp\ConfigApp.test.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\ConfigApp\ConfigApp.common.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\ConfigApp\ConfigApp.dev.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\ConfigApp\ConfigApp.local.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\ConfigApp\ConfigApp.uat.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\GenerateInputFilesForEnvironment.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Quartz\Quartz.internal.qa.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Quartz\Quartz.prod.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Quartz\Quartz.test.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Quartz\Quartz.common.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Quartz\Quartz.dev.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Quartz\Quartz.local.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Quartz\Quartz.uat.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WCF\WCF.internal.qa.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WCF\WCF.prod.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WCF\WCF.test.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WCF\WCF.dev.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WCF\WCF.local.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WCF\WCF.common.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WCF\WCF.uat.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WebApi\WebApi.common.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WebApi\WebApi.dev.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WebApi\WebApi.internal.qa.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WebApi\WebApi.local.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WebApi\WebApi.prod.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WebApi\WebApi.test.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\WebApi\WebApi.uat.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Website\Website.prod.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Website\Website.dev.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Website\Website.test.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Website\Website.common.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Website\Website.local.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\Website\Website.uat.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\_Defaults\Defaults.dev.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\_Defaults\Defaults.internal.qa.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\_Defaults\Defaults.local.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\_Defaults\Defaults.common.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\_Defaults\Defaults.prod.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\_Defaults\Defaults.test.input" />
+    <None Include="$(MSBuildThisFileDirectory)Templating\Inputs\_Defaults\Defaults.uat.input" />
+    <None Include="$(MSBuildThisFileDirectory)UpgradeScripts\Upgrade_5_8_1.ps1" />
+    <None Include="$(MSBuildThisFileDirectory)UpgradeScripts\Upgrade_5_8_1_DevUtilities.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Shell\ConfigApp\ConfigAppExcludedFiles.txt" />
+  </ItemGroup>
+</Project>

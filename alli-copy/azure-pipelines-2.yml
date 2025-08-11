@@ -1,0 +1,30 @@
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: 'Alliance.Wholesale.Gravitate.sln'
+  projectPath: 'Gravitate.WebAPI/Gravitate.WebAPI.csproj'
+  buildPlatform: 'AnyCpu'
+  buildConfiguration: 'Release'
+  connectionString: $(connection_string)
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(projectPath)'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="AllianceEnergy"'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+
+- task: PublishBuildArtifacts@1
