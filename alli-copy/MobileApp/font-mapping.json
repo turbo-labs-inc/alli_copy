@@ -1,0 +1,11 @@
+{
+  "strict": {
+    "text-font-family": "OpenSans_400Regular",
+    "text-heading-5-font-size": 18,
+    "text-heading-6-font-family": "OpenSans_700Bold",
+    "text-paragraph-2-font-size": 14,
+    "text-paragraph-2-font-family": "OpenSans_600SemiBold",
+    "text-caption-1-font-family": "OpenSans_600SemiBold",
+    "text-caption-2-font-family": "OpenSans_700Bold"
+  }
+}

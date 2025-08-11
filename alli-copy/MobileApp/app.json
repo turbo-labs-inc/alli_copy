@@ -1,0 +1,82 @@
+{
+  "expo": {
+    "name": "Alliance App",
+    "slug": "alliancemobileapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "allianceapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "description": "Alliance Energy mobile app for managing energy operations, contracts, and business processes.",
+    "keywords": ["energy", "alliance", "business", "operations", "contracts"],
+    "privacy": "unlisted",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.allianceenergy.allianceapp",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "This app uses the camera to capture documents and photos for business operations.",
+        "NSPhotoLibraryUsageDescription": "This app accesses your photo library to attach images to reports and documents.",
+        "NSLocationWhenInUseUsageDescription": "This app uses location to provide location-specific energy data and services."
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.allianceenergy.allianceapp",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "updates": {
+      "enabled": true,
+      "fallbackToCacheTimeout": 0,
+      "checkAutomatically": "ON_LOAD",
+      "url": "https://u.expo.dev/ad796608-b62f-434e-a605-81a34487aff7"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "ad796608-b62f-434e-a605-81a34487aff7"
+      }
+    },
+    "owner": "expo-capspire"
+  }
+}
