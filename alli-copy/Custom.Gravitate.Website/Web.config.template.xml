@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- For more information on how to configure your ASP.NET application, please visit http://go.microsoft.com/fwlink/?LinkId=169433 -->
+<configuration>
+  <configSections>
+    <section name="quartz" type="System.Configuration.NameValueSectionHandler, System, Version=1.0.5000.0,Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <section name="sqlServerCatalogNameOverwrites" type="System.Configuration.NameValueSectionHandler" />
+
+    <sectionGroup name="system.web.webPages.razor" type="System.Web.WebPages.Razor.Configuration.RazorWebSectionGroup, System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
+      <section name="host" type="System.Web.WebPages.Razor.Configuration.HostSection, System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" />
+      <section name="pages" type="System.Web.WebPages.Razor.Configuration.RazorPagesSection, System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" />
+    </sectionGroup>
+    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+    <!--<section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />-->
+
+    <section name="gravitateWebsite" type="Gravitate.Library.Configuration.GravitateWebsiteConfigSection" />
+    <sectionGroup name="bundleTransformer">
+      <section name="core" type="BundleTransformer.Core.Configuration.CoreSettings, BundleTransformer.Core" />
+      <section name="sassAndScss" type="BundleTransformer.SassAndScss.Configuration.SassAndScssSettings, BundleTransformer.SassAndScss" />
+    </sectionGroup>
+    <!-- For Saml2 Library -->
+    <section name="system.identityModel" type="System.IdentityModel.Configuration.SystemIdentityModelSection, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+    <section name="system.identityModel.services" type="System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+    <section name="sustainsys.saml2" type="Sustainsys.Saml2.Configuration.SustainsysSaml2Section, Sustainsys.Saml2" />
+  </configSections>
+
+  <connectionStrings>
+    <add name="Application.ConnectionString" connectionString="${Gravitate.ConnectionString}" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+
+
+	<sqlServerCatalogNameOverwrites>
+		<add key="Gravitate_Core_CTRM_V5_7" value="" />
+		<add key="Gravitate_NGL_Wholesale" value="" />
+	</sqlServerCatalogNameOverwrites>
+  <quartz>
+    <add key="quartz.scheduler.instanceName" value="ServerScheduler" />
+    <!--<add key="quartz.scheduler.instanceId" value="Provider.DEV" />-->
+    <!--# configure thread pool info-->
+    <add key="quartz.threadPool.type" value="Quartz.Simpl.ZeroSizeThreadPool, Quartz" />
+    <!--<add key="quartz.threadPool.threadCount" value="10"/>
+    <add key="quartz.threadPool.threadPriority" value="Normal"/>-->
+    <!--# configure the jobStore to use SQL Server -->
+    <add key="quartz.jobStore.misfireThreshold" value="60000" />
+    <!--<add key="quartz.jobStore.type" value="Quartz.Simpl.RAMJobStore, Quartz"/>-->
+    <add key="quartz.jobStore.type" value="Quartz.Impl.AdoJobStore.JobStoreTX, Quartz" />
+    <add key="quartz.jobStore.useProperties" value="false" />
+    <add key="quartz.jobStore.driverDelegateType" value="Quartz.Impl.AdoJobStore.SqlServerDelegate, Quartz " />
+    <!--<add key="quartz.jobStore.driverDelegateType" value="Quartz.Impl.AdoJobStore.StdAdoDelegate, Quartz"/>-->
+    <add key="quartz.jobStore.tablePrefix" value="QRTZ_" />
+    <add key="quartz.jobStore.lockHandler.type" value="Quartz.Impl.AdoJobStore.UpdateLockRowSemaphore, Quartz" />
+    <add key="quartz.jobStore.dataSource" value="default" />
+    <add key="quartz.dataSource.default.connectionString" value="${Gravitate.ConnectionString}" />
+    <add key="quartz.dataSource.default.provider" value="SqlServer-20" />
+  </quartz>
+  <system.web.webPages.razor>
+    <host factoryType="System.Web.Mvc.MvcWebRazorHostFactory, System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+    <pages pageBaseType="System.Web.Mvc.WebViewPage">
+      <namespaces>
+        <add namespace="System.Web.Mvc" />
+        <add namespace="System.Web.Mvc.Ajax" />
+        <add namespace="System.Web.Mvc.Html" />
+        <add namespace="System.Web.Routing" />
+        <add namespace="Kendo.Mvc.UI" />
+        <add namespace="System.Web.Optimization" />
+      </namespaces>
+    </pages>
+  </system.web.webPages.razor>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-12.0.0.0" newVersion="12.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Razor" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="RazorEngine" publicKeyToken="9ee697374c7e744a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.4.1.0" newVersion="3.4.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Castle.Windsor" publicKeyToken="407dd0808d44fbdc" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Castle.Core" publicKeyToken="407dd0808d44fbdc" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-1.6.5135.21930" newVersion="1.6.5135.21930" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Net.Http" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.WebPages.Razor" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.WebPages.Deployment" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="DotNetOpenAuth.OAuth.Consumer" publicKeyToken="2780ccd10d57b246" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.3.0.0" newVersion="4.3.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="DotNetOpenAuth.OAuth" publicKeyToken="2780ccd10d57b246" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.3.0.0" newVersion="4.3.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="DotNetOpenAuth.Core" publicKeyToken="2780ccd10d57b246" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.3.0.0" newVersion="4.3.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="log4net" publicKeyToken="669e0ddf0bb1aa2a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-2.0.8.0" newVersion="2.0.8.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Common.Logging" publicKeyToken="af08829b84f0328e" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.4.1.0" newVersion="3.4.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Antlr3.Runtime" publicKeyToken="eb42632606e9261f" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.5.0.2" newVersion="3.5.0.2" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="DotNetOpenAuth.AspNet" publicKeyToken="2780ccd10d57b246" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.3.0.0" newVersion="4.3.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Http" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-5.2.7.0" newVersion="5.2.7.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Optimization" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-1.1.0.0" newVersion="1.1.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="ActionMailer.Net" publicKeyToken="e62db3114c02a1c2" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-0.7.4.0" newVersion="0.7.4.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="WebMatrix.Data" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Common.Logging.Core" publicKeyToken="af08829b84f0328e" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.4.1.0" newVersion="3.4.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.WebPages.Deployment" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="itextsharp" publicKeyToken="8354ae6d2174ddca" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-5.5.12.0" newVersion="5.5.12.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.ApplicationInsights" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-2.4.0.0" newVersion="2.4.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.2.1" newVersion="4.0.2.1" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Runtime.InteropServices.RuntimeInformation" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.1.0" newVersion="4.0.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="MoreLinq" publicKeyToken="384d532d7e88985d" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.1.1.0" newVersion="3.1.1.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="HtmlSanitizer" publicKeyToken="61c49a1a9e79cc28" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.IdentityModel.Tokens" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-5.3.0.0" newVersion="5.3.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.IdentityModel.Logging" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-1.1.4.0" newVersion="1.1.4.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.IdentityModel.Tokens.Jwt" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-5.3.0.0" newVersion="5.3.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-5.2.7.0" newVersion="5.2.7.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+
+  </runtime>
+  <appSettings configSource="AppSettings.config" />
+  <gravitateWebsite configSource="GravitateWebsite.config" />
+  <!-- This section is an example of how to lock down a directory when using a Membership & RoleProvider 
+    deny = * means deny everyone
+    deny = ? means deny unauthenticated users-->
+  <location path="App_Themes">
+    <system.web>
+      <authorization>
+        <allow users="*" />
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Images">
+    <system.web>
+      <authorization>
+        <allow users="*" />
+      </authorization>
+    </system.web>
+  </location>
+  <!--
+    For a description of web.config changes see http://go.microsoft.com/fwlink/?LinkId=235367.
+
+    The following attributes can be set on the <httpRuntime> tag.
+      <system.Web>
+        <httpRuntime targetFramework="4.5.1" />
+      </system.Web>
+  -->
+  <system.web>
+    <!--<globalization uiCulture="en-US" culture="en-US" />-->
+    <globalization uiCulture="auto:en" culture="auto:en-US" enableClientBasedCulture="true" />
+    <!-- 
+      Set compilation debug="true" to insert debugging symbols into the compiled page. Because this 
+      affects performance, set this value to true only during development.
+    -->
+    <compilation debug="${WebConfig.Compilation.Debug}" targetFramework="4.5.2">
+      <assemblies>
+        <add assembly="System.Web.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="System.Runtime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+        <add assembly="System.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      </assemblies>
+    </compilation>
+
+    <authentication mode="Forms">
+      <forms loginUrl="~/Login" defaultUrl="~/Login/BaseURL" timeout="120" ticketCompatibilityMode="Framework40" requireSSL="true" cookieless="UseCookies" enableCrossAppRedirects="false" />
+      <!--requireSSL="true"-->
+    </authentication>
+    <httpCookies requireSSL="true" />
+    <sessionState timeout="120" />
+    <!--
+      The <authentication> section enables configuration of the security authentication mode used by ASP.NET to identify an incoming user. 
+    <authentication mode="Forms">
+      <forms loginUrl="~/Login/Login" defaultUrl="~/Dashboard" protection="All" timeout="120" name=".GRAVITATEAUTH" path="/" requireSSL="false" slidingExpiration="true" cookieless="UseCookies" enableCrossAppRedirects="false" />
+    </authentication>-->
+    <membership defaultProvider="GravitateMembershipProvider">
+      <providers>
+        <clear />
+        <add name="GravitateMembershipProvider" type="Gravitate.Security.Providers.GravitateMembershipProvider, Gravitate.Security" enablePasswordReset="true" maxInvalidPasswordAttempts="5" passwordAttemptWindow="10" />
+      </providers>
+    </membership>
+    <roleManager enabled="true" cacheRolesInCookie="true" cookieName=".ASPXROLES" cookieTimeout="120" cookiePath="/" cookieRequireSSL="false" cookieSlidingExpiration="true" cookieProtection="All" defaultProvider="GravitateRoleProvider" createPersistentCookie="false" maxCachedResults="25">
+      <providers>
+        <clear />
+        <add name="GravitateRoleProvider" type="Gravitate.Security.Providers.GravitateRoleProvider,Gravitate.Security" connectionStringName="Main.ConnectionString" applicationName="Gravitate" writeExceptionsToEventLog="false" />
+      </providers>
+    </roleManager>
+    <siteMap defaultProvider="XmlSiteMapProvider" enabled="true">
+      <providers>
+        <add name="XmlSiteMapProvider" description="SiteMap provider which reads in .sitemap XML files." type="System.Web.XmlSiteMapProvider, System.Web, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" siteMapFile="CommonControls/web.sitemap" securityTrimmingEnabled="true" />
+      </providers>
+    </siteMap>
+    <!--
+            The <customErrors> section enables configuration of what to do if/when an unhandled error occurs
+            during the execution of a request. Specifically, it enables developers to configure html error pages
+            to be displayed in place of a error stack trace.
+        -->
+    <customErrors mode="RemoteOnly" defaultRedirect="/Error" />
+    <httpHandlers />
+    <httpModules />
+    <httpRuntime maxRequestLength="1048576" executionTimeout="3600" targetFramework="4.5" enableVersionHeader="false" />
+  </system.web>
+  <system.serviceModel>
+    <client>
+      <endpoint address="${Gravitate.RA.EndpointAddress}/Windows" binding="basicHttpBinding" bindingConfiguration="GravitateDealServiceWindows" contract="GravitateDealService.IGravitateDealService" name="GravitateDealServiceWindows" />
+    </client>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="GravitateDealServiceWindows" maxReceivedMessageSize="2147483647">
+          <security mode="TransportCredentialOnly">
+            <transport clientCredentialType="Windows" />
+          </security>
+        </binding>
+        <!--<binding name="GravitateIntegrationService" maxReceivedMessageSize="2147483647" maxBufferPoolSize="2147483647" maxBufferSize="2147483647">
+          <security mode="Transport">
+            <transport clientCredentialType="None" />
+          </security>
+          <readerQuotas maxDepth="2000000000"
+                        maxStringContentLength="2000000000"
+                        maxArrayLength="2000000000"
+                        maxBytesPerRead="2000000000"
+                        maxNameTableCharCount="2000000000" />
+        </binding>-->
+      </basicHttpBinding>
+      <wsHttpBinding>
+        <binding name="gravBinding" maxReceivedMessageSize="2147483647">
+          <security mode="Transport">
+            <transport clientCredentialType="None" />
+          </security>
+        </binding>
+      </wsHttpBinding>
+    </bindings>
+    <services>
+
+      <service name="Gravitate.WCF.Integration.BillOfLadingIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IBillOfLadingIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.BookIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IBookIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.ColleagueIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IColleagueIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.CounterPartyIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.ICounterPartyIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.CounterPartyLocationIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.ICounterPartyLocationIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.CurrencyIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.ICurrencyIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.DistributionListIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IDistributionListIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.DocumentIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IDocumentIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.IntegrationStatus">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IIntegrationStatusService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.InvoiceIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IInvoiceIntegrationService" />
+      </service>
+      <service name="Custom.Gravitate.WCF.Integration.LoadingNumberIntegrationService">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Custom.Gravitate.WCF.Interfaces.Integration.ILoadingNumberIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.LocationIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.ILocationIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.PaymentTermIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IPaymentTermIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.PriceIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IPriceIntegrationService" />
+      </service>
+      <service name="Custom.Gravitate.WCF.Integration.PricingNotificationIntegrationService">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Custom.Gravitate.WCF.Interfaces.Integration.IPricingNotificationIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.ProductIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IProductIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.ProductLocationMappingIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IProductLocationMappingIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.TradeIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.ITradeIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.TradePriceTypeIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.ITradePriceTypeIntegrationService" />
+      </service>
+      <service name="Gravitate.WCF.Integration.UnitOfMeasureIntegration">
+        <endpoint binding="wsHttpBinding" bindingConfiguration="gravBinding" contract="Gravitate.WCF.Interfaces.Integration.IUnitOfMeasureIntegrationService" />
+      </service>
+
+    </services>
+
+    <behaviors>
+      <serviceBehaviors>
+        <behavior>
+          <!-- To avoid disclosing metadata information, set the values below to false before deployment -->
+          <serviceMetadata httpGetEnabled="false" httpsGetEnabled="true" />
+          <!-- To receive exception details in faults for debugging purposes, set the value below to true.  Set to false before deployment to avoid disclosing exception information -->
+          <serviceDebug includeExceptionDetailInFaults="false" />
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+    <!--<protocolMapping>
+        <add binding="basicHttpsBinding" scheme="https" />
+    </protocolMapping>-->
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="false" multipleSiteBindingsEnabled="true" />
+  </system.serviceModel>
+  <!--doesn't seem to work-->
+  <!--<system.web.extensions>
+        <scripting>
+            <webServices>
+                <jsonSerialization maxJsonLength="1000000000" />
+            </webServices>
+        </scripting>
+    </system.web.extensions>-->
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false" />
+    <modules runAllManagedModulesForAllRequests="true">
+      <add name="SessionAuthenticationModule" type="System.IdentityModel.Services.SessionAuthenticationModule, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" preCondition="managedHandler" />
+    </modules>
+
+    <httpProtocol>
+      <customHeaders>
+        <remove name="X-Powered-By" />
+      </customHeaders>
+    </httpProtocol>
+
+    <!--These didn't seem to do anything...
+      <caching enabled="true"></caching>
+
+    <staticContent>
+        <clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="7.00:00:00" />
+    </staticContent>-->
+    <urlCompression doStaticCompression="true" doDynamicCompression="false" />
+
+    <staticContent>
+      <remove fileExtension=".woff2" />
+      <!--Add the remove incase other sites have added this in IIS, as this mapping happens at the machine level-->
+      <mimeMap fileExtension=".woff2" mimeType="font/x-woff2" />
+    </staticContent>
+    <handlers>
+      <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
+      <remove name="OPTIONSVerbHandler" />
+      <remove name="TRACEVerbHandler" />
+      <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
+      <add name="SassAssetHandler" path="*.sass" verb="GET" type="BundleTransformer.SassAndScss.HttpHandlers.SassAndScssAssetHandler, BundleTransformer.SassAndScss" resourceType="File" preCondition="" />
+      <add name="ScssAssetHandler" path="*.scss" verb="GET" type="BundleTransformer.SassAndScss.HttpHandlers.SassAndScssAssetHandler, BundleTransformer.SassAndScss" resourceType="File" preCondition="" />
+    </handlers>
+    <security>
+      <requestFiltering>
+        <verbs allowUnlisted="true">
+          <add verb="OPTIONS" allowed="false" />
+        </verbs>
+      </requestFiltering>
+    </security>
+  </system.webServer>
+
+
+  <!--<entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework" />
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />
+    </providers>
+    </entityFramework>-->
+
+  <!--<system.diagnostics>
+        <switches>
+            <add name="SqlServerDQE" value="0" />
+            <add name="ORMGeneral" value="0" />
+            <add name="ORMStateManagement" value="0" />
+            <add name="ORMPersistenceExecution" value="0" />
+            <add name="LinqExpressionHandler" value="3" />
+        </switches>
+    </system.diagnostics>-->
+  <!--<system.diagnostics>
+    <trace>
+      <listeners>
+        <add type="Microsoft.WindowsAzure.Diagnostics.DiagnosticMonitorTraceListener, Microsoft.WindowsAzure.Diagnostics, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" name="AzureDiagnostics">
+        </add>
+      </listeners>
+    </trace>
+  </system.diagnostics>-->
+  <bundleTransformer xmlns="http://tempuri.org/BundleTransformer.Configuration.xsd">
+    <core>
+      <css>
+        <translators>
+          <add name="NullTranslator" type="BundleTransformer.Core.Translators.NullTranslator, BundleTransformer.Core" enabled="false" />
+          <add name="SassAndScssTranslator" type="BundleTransformer.SassAndScss.Translators.SassAndScssTranslator, BundleTransformer.SassAndScss" />
+        </translators>
+        <postProcessors>
+          <add name="UrlRewritingCssPostProcessor" type="BundleTransformer.Core.PostProcessors.UrlRewritingCssPostProcessor, BundleTransformer.Core" useInDebugMode="false" />
+        </postProcessors>
+        <minifiers>
+          <add name="NullMinifier" type="BundleTransformer.Core.Minifiers.NullMinifier, BundleTransformer.Core" />
+        </minifiers>
+        <fileExtensions>
+          <add fileExtension=".css" assetTypeCode="Css" />
+          <add fileExtension=".sass" assetTypeCode="Sass" />
+          <add fileExtension=".scss" assetTypeCode="Scss" />
+        </fileExtensions>
+      </css>
+      <js>
+        <translators>
+          <add name="NullTranslator" type="BundleTransformer.Core.Translators.NullTranslator, BundleTransformer.Core" enabled="false" />
+        </translators>
+        <minifiers>
+          <add name="NullMinifier" type="BundleTransformer.Core.Minifiers.NullMinifier, BundleTransformer.Core" />
+        </minifiers>
+        <fileExtensions>
+          <add fileExtension=".js" assetTypeCode="JavaScript" />
+        </fileExtensions>
+      </js>
+    </core>
+  </bundleTransformer>
+  <system.identityModel.services>
+    <federationConfiguration>
+      <cookieHandler requireSsl="true" />
+    </federationConfiguration>
+  </system.identityModel.services>
+  <system.codedom>
+    <compilers>
+      <compiler language="c#;cs;csharp" extension=".cs" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:6 /nowarn:1659;1699;1701" />
+      <compiler language="vb;vbs;visualbasic;vbscript" extension=".vb" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:14 /nowarn:41008 /define:_MYTYPE=\&quot;Web\&quot; /optionInfer+" />
+    </compilers>
+  </system.codedom>
+</configuration>

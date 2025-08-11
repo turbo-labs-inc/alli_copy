@@ -1,0 +1,48 @@
+# Use Windows Server Core with .NET Framework
+FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS build
+WORKDIR /app
+
+# Copy solution and project files
+COPY *.sln ./
+COPY Custom.Gravitate.WebAPI/*.csproj ./Custom.Gravitate.WebAPI/
+COPY Custom.Gravitate.WebAPI/*.config ./Custom.Gravitate.WebAPI/
+COPY Gravitate.Web/*.csproj ./Gravitate.Web/
+COPY Gravitate.WebAPI/*.csproj ./Gravitate.WebAPI/
+COPY Gravitate.Library/*.csproj ./Gravitate.Library/
+COPY Gravitate.Domain.Adapter/DatabaseGeneric/*.csproj ./Gravitate.Domain.Adapter/DatabaseGeneric/
+COPY Gravitate.Domain.Adapter.DAL/*.csproj ./Gravitate.Domain.Adapter.DAL/
+COPY Custom.Gravitate.WCF/*.csproj ./Custom.Gravitate.WCF/
+COPY Gravitate.WCF/*.csproj ./Gravitate.WCF/
+COPY Gravitate.Services/*.csproj ./Gravitate.Services/
+COPY Gravitate.Security/*.csproj ./Gravitate.Security/
+COPY Custom.Gravitate.Domain.Adapter.DAL/*.csproj ./Custom.Gravitate.Domain.Adapter.DAL/
+COPY Custom.Gravitate.Library/*.csproj ./Custom.Gravitate.Library/
+COPY Gravitate.Integration.RA.DAL/DatabaseGeneric/*.csproj ./Gravitate.Integration.RA.DAL/DatabaseGeneric/
+COPY Gravitate.Notification/*.csproj ./Gravitate.Notification/
+COPY Custom.Gravitate.Notification/*.csproj ./Custom.Gravitate.Notification/
+
+# Restore NuGet packages
+RUN nuget restore
+
+# Copy everything else
+COPY . .
+
+# Build the WebAPI project
+WORKDIR /app/Custom.Gravitate.WebAPI
+RUN msbuild /p:Configuration=Release
+
+# Runtime image
+FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8
+WORKDIR /inetpub/wwwroot
+
+# Copy built application
+COPY --from=build /app/Custom.Gravitate.WebAPI ./
+
+# Configure IIS
+RUN powershell -Command \
+    Import-Module WebAdministration; \
+    New-WebAppPool -Name 'CustomGravitateAPI'; \
+    Set-ItemProperty -Path 'IIS:\AppPools\CustomGravitateAPI' -Name processIdentity.identityType -Value 'ApplicationPoolIdentity'; \
+    New-Website -Name 'CustomGravitateAPI' -Port 80 -PhysicalPath 'C:\inetpub\wwwroot' -ApplicationPool 'CustomGravitateAPI'
+
+EXPOSE 80

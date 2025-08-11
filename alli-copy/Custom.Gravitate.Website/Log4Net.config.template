@@ -1,0 +1,76 @@
+﻿<log4net>
+    <logger name="HttpWebRequestLogger">
+      <level value="ERROR"/>
+      <appender-ref ref="RollingLogFileAppender" />
+    </logger>
+  <logger name="AuditLogger">
+    <level value="INFO" />
+    <maximumfilesize value="256KB" />
+    <appender-ref ref="AuditLogFileAppender" />
+    <appender-ref ref="AzureFileAppender" />
+    </logger>
+  <root>
+    <!--Valid Values: DEBUG, INFO, WARN, ERROR, FATAL-->
+    <level value="DEBUG" />
+    <appender-ref ref="TraceAppender" />
+    <appender-ref ref="RollingLogFileAppender" />
+    <appender-ref ref="EventLogAppender" />
+    <appender-ref ref="MemoryAppender" />
+  </root>
+
+  <appender name="TraceAppender" type="log4net.Appender.TraceAppender">
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%logger - %message" />
+    </layout>
+  </appender>
+    <appender name="RollingLogFileAppender" type="log4net.Appender.RollingFileAppender">
+        <file value="${Gravitate.LogFolderPath}\\GravitateWebsite.xml" />
+        <PreserveLogFileNameExtension value="true" />
+        <appendToFile value="true" />
+        <maxSizeRollBackups value="10" />
+        <maximumFileSize value="10MB" />
+        <rollingStyle value="Date" />
+        <staticLogFileName value="true" />
+        <layout type="log4net.Layout.XmlLayoutSchemaLog4j">
+            <locationInfo value="true" />
+        </layout>        
+    </appender>
+    
+  <appender name="AuditLogFileAppender" type="log4net.Appender.RollingFileAppender">
+    <file value="${Gravitate.LogFolderPath}\\GravitateWebsite_Audit.xml" />
+    <PreserveLogFileNameExtension value="true" />
+    <appendToFile value="true" />
+    <maxSizeRollBackups value="10" />
+    <maximumFileSize value="10MB" />
+    <rollingStyle value="Date" />
+    <staticLogFileName value="true" />
+    <layout type="log4net.Layout.XmlLayoutSchemaLog4j">
+      <locationInfo value="true" />
+    </layout>
+  </appender>
+  <appender name="MemoryAppender" type="common.GravitateLimitedMemoryAppender">
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date{HH:mm:ss}|%-5level|%message|%logger|%M%newline" />
+    </layout>
+  </appender>
+
+  <appender name="EventLogAppender" type="log4net.Appender.EventLogAppender">
+    <applicationName value="Gravitate" />
+        <threshold value="ERROR" />
+        <layout type="log4net.Layout.PatternLayout">
+            <conversionPattern value="%date [ThreadId: %thread] %-5level %logger: %newline%message%newline" />
+            <!--[%property{NDC}]-->
+        </layout>
+    </appender>
+  <appender name="AzureFileAppender" type="log4net.Appender.FileAppender">
+    <file value="${Gravitate.LogFolderPath}\\GravitateWebsiteAzure.txt" />
+    <appendToFile value="true" />
+    <maxSizeRollBackups value="10" />
+    <maximumFileSize value="10MB" />
+    <rollingStyle value="Date" />
+    <staticLogFileName value="true" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date THREAD=[%thread] LEVEL=%-5level LOGGER=%logger REMOTE_ADDR=%aspnet-request{REMOTE_ADDR} HTTP_X_FORWARDED_FOR=%aspnet-request{HTTP_X_FORWARDED_FOR} - MESSAGE=%message%newline" />
+    </layout>
+  </appender>
+</log4net>

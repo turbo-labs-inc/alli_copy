@@ -1,0 +1,2152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\LibSassHost.Native.win-x86.1.2.0\build\LibSassHost.Native.win-x86.props" Condition="Exists('..\packages\LibSassHost.Native.win-x86.1.2.0\build\LibSassHost.Native.win-x86.props')" />
+  <Import Project="..\packages\LibSassHost.Native.win-x64.1.2.0\build\LibSassHost.Native.win-x64.props" Condition="Exists('..\packages\LibSassHost.Native.win-x64.1.2.0\build\LibSassHost.Native.win-x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C6BF2266-E469-423E-A0DE-21C09AFD7C1B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Custom.Website</RootNamespace>
+    <AssemblyName>Custom.Website</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>55066</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Buttons.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Buttons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Controls.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controls.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\General.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>General.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Grid.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Grid.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Navigation.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Navigation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Custom\Controllers\CustomAgingWidgetModel.cs" />
+    <Compile Include="Areas\Custom\Controllers\CustomDashboardController.cs" />
+    <Compile Include="Areas\Custom\Controllers\CustomPaymentPageDetailController.cs" />
+    <Compile Include="Areas\Custom\Controllers\CustomUpcomingPaymentController.cs" />
+    <Compile Include="Areas\Custom\Controllers\MarketingDocumentController.cs" />
+    <Compile Include="Areas\Custom\Controllers\CustomBuyOrderWidgetController.cs" />
+    <Compile Include="Areas\Custom\Controllers\CustomerProfileController.cs" />
+    <Compile Include="Areas\Custom\Controllers\CustomReportController.cs" />
+    <Compile Include="Areas\Custom\Controllers\CustomTruckAndRailQuoteController.cs" />
+    <Compile Include="Areas\Custom\Controllers\InvoicePageDetailController.cs" />
+    <Compile Include="Areas\Custom\Controllers\PositionWorkbenchController.cs" />
+    <Compile Include="Areas\Custom\Controllers\PriceAnalysisController.cs" />
+    <Compile Include="Areas\Custom\Controllers\PricingController.cs" />
+    <Compile Include="Areas\Custom\Controllers\RackPriceAnalysisController.cs" />
+    <Compile Include="Areas\Custom\Controllers\ContractPerformanceController.cs" />
+    <Compile Include="Areas\Custom\Controllers\CustomTradeEntryController.cs" />
+    <Compile Include="Areas\Custom\Controllers\TradePageDetailController.cs" />
+    <Compile Include="Areas\Custom\Controllers\WorkflowController.cs" />
+    <Compile Include="Areas\Custom\CustomAreaRegistration.cs" />
+    <Compile Include="Areas\Custom\Interfaces\IWorkflowParentResolver.cs" />
+    <Compile Include="Areas\Custom\ModelInitializers\ConfigurableDashboard\CustomTodaysPricesConfigurableDashboardModelInitializer.cs" />
+    <Compile Include="Areas\Custom\ModelInitializers\ConfigurableDashboard\MarketDocumentModelIntializer.cs" />
+    <Compile Include="Areas\Custom\ModelInitializers\ConfigurableDashboard\BuyOrderModelIntializer.cs" />
+    <Compile Include="Areas\Custom\ModelInitializers\ConfigurableDashboard\ExampleInitializer.cs" />
+    <Compile Include="Areas\Custom\ModelInitializers\CustomTradeDateSliderInitializer.cs" />
+    <Compile Include="Areas\Custom\ModelInitializers\CustomRackPricesDateSliderInitializer.cs" />
+    <Compile Include="Areas\Custom\ModelInitializers\CustomPriceAuditDateSliderInitializer.cs" />
+    <Compile Include="Areas\Custom\ModelInitializers\InternalColleagueWithCounterPartyNameDropDownInitializer.cs" />
+    <Compile Include="Areas\Custom\ModelInitializers\EmptyDashboardWidgetModelInitializer.cs" />
+    <Compile Include="Areas\Custom\ModelInitializers\CustomRackPricesDropDownInitializer.cs" />
+    <Compile Include="Areas\Custom\ModelInitializers\MarketPriceBookDropDownInitializer.cs" />
+    <Compile Include="Areas\Custom\Models\BuyOrdersModel.cs" />
+    <Compile Include="Areas\Custom\Models\CustomCreditWidgetModel.cs" />
+    <Compile Include="Areas\Custom\Models\CustomerProfileModel.cs" />
+    <Compile Include="Areas\Custom\Models\CustomContractPerformanceModel.cs" />
+    <Compile Include="Areas\Custom\Models\CustomTodaysPrice.cs" />
+    <Compile Include="Areas\Custom\Models\CustomTradeEntryPricesByPeriodDialogModel.cs" />
+    <Compile Include="Areas\Custom\Models\CustomUpcomingPaymentWidgetModel.cs" />
+    <Compile Include="Areas\Custom\Models\MarketDocumentModel.cs" />
+    <Compile Include="Areas\Custom\Models\DefaultFuelSurchargeModel.cs" />
+    <Compile Include="Areas\Custom\Models\CustomPricingModel.cs" />
+    <Compile Include="Areas\Custom\Models\EmptyDashboardWidgetModel.cs" />
+    <Compile Include="Areas\Custom\Models\ExampleModel.cs" />
+    <Compile Include="Areas\Custom\Models\FilterModel.cs" />
+    <Compile Include="Areas\Custom\Models\PositionModel.cs" />
+    <Compile Include="Areas\Custom\Models\PositionWorkbenchDataModel.cs" />
+    <Compile Include="Areas\Custom\Models\PriceAnalysisModel.cs" />
+    <Compile Include="Areas\Custom\Models\CustomRackPriceAnalysisModel.cs" />
+    <Compile Include="Areas\Custom\Models\TruckAndRailQuoteModel.cs" />
+    <Compile Include="Areas\Custom\Models\WorkflowModel.cs" />
+    <Compile Include="Areas\TradeEntry\WholesaleTradeEntryControllerExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windsor\CustomInstaller.cs" />
+    <Compile Include="Windsor\WorkflowNavigationInstaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="10_million_password_list_top_1000000.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="AppSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Themes\common\css\analytics.css" />
+    <Content Include="App_Themes\common\css\analytics.min.css" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\bootstrap.css" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\bootstrap.min.css" />
+    <Content Include="App_Themes\common\css\bootstrap\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="App_Themes\common\css\chosen.css" />
+    <Content Include="App_Themes\common\css\dashboard.css" />
+    <Content Include="App_Themes\common\css\DataTable.net.css" />
+    <Content Include="App_Themes\common\css\EditMode.css" />
+    <Content Include="App_Themes\common\css\EntityReport.css" />
+    <Content Include="App_Themes\common\css\Flickity\gravitateFlickity.css" />
+    <Content Include="App_Themes\common\css\font-awesome\font-awesome.css" />
+    <Content Include="App_Themes\common\css\font-awesome\font-awesome.min.css" />
+    <Content Include="App_Themes\common\css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\common\css\font-awesome\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Themes\common\css\highcharts.css" />
+    <Content Include="App_Themes\common\css\Joyride\joyride-2.1.css" />
+    <Content Include="App_Themes\common\css\jquery-ui-timepicker\jquery.ui.timepicker.css" />
+    <Content Include="App_Themes\common\css\jquery-ui.css" />
+    <Content Include="App_Themes\common\css\jquery.multiSelect.css" />
+    <Content Include="App_Themes\common\css\jquery.powertip.css" />
+    <Content Include="App_Themes\common\css\jquery.powertip.min.css" />
+    <Content Include="App_Themes\common\css\Kendo\all.css" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\glyphs\KendoUIGlyphs.svg" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\glyphs\WebComponentsIcons.svg" />
+    <Content Include="App_Themes\common\css\Kendo\kendo_overrides.css" />
+    <Content Include="App_Themes\common\css\Kendo\textures\brushed-metal.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots1.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots10.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots11.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots12.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots13.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots2.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots3.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots4.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots5.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots6.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots7.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots8.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\dots9.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\glass-lighter.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\glass.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\highlight.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\hsv-gradient.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\hue.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\leather1.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\leather2.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\noise.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\stripe1.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\stripe2.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\stripe3.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\stripe4.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\stripe5.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\stripe6.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\transparency.png" />
+    <Content Include="App_Themes\common\css\Kendo\textures\transtexture.png" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\editor.png" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\imagebrowser.png" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\indeterminate.gif" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\loading-image.gif" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\loading.gif" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\loading_2x.gif" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\markers.png" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\markers_2x.png" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\slider-h.gif" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\slider-v.gif" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\sprite.png" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\sprite_2x.png" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\sprite_kpi.png" />
+    <Content Include="App_Themes\common\css\Kendo\Uniform\sprite_kpi_2x.png" />
+    <Content Include="App_Themes\common\css\orderentry.css" />
+    <Content Include="App_Themes\common\css\ordersuccess.css" />
+    <Content Include="App_Themes\common\css\Packery\gravitatePackery.css" />
+    <Content Include="App_Themes\common\css\PriceWorkbench.css" />
+    <Content Include="App_Themes\common\css\slick.grid.css" />
+    <Content Include="App_Themes\common\css\slick.headerbuttons.css" />
+    <Content Include="App_Themes\common\css\slick.headermenu.css" />
+    <Content Include="App_Themes\common\css\toastr\toastr.css" />
+    <Content Include="App_Themes\common\css\toastr\toastr.min.css" />
+    <Content Include="App_Themes\common\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Themes\common\fonts\flaticon\Flaticon.svg" />
+    <Content Include="App_Themes\common\fonts\font-awesome\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\common\fonts\font-awesome\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Themes\common\fonts\weather\artill_clean_icons-webfont.svg" />
+    <Content Include="App_Themes\common\images\controls\handle_left.gif" />
+    <Content Include="App_Themes\common\images\controls\handle_right.gif" />
+    <Content Include="App_Themes\common\images\controls\rail_dark.gif" />
+    <Content Include="App_Themes\common\images\controls\rail_light.gif" />
+    <Content Include="App_Themes\common\images\controls\slider_handle.gif" />
+    <Content Include="App_Themes\common\images\controls\slider_h_handle_down.gif" />
+    <Content Include="App_Themes\common\images\controls\slider_h_handle_hover.gif" />
+    <Content Include="App_Themes\common\images\controls\slider_innerRail.gif" />
+    <Content Include="App_Themes\common\images\controls\slider_outerRail.gif" />
+    <Content Include="App_Themes\common\images\controls\slider_v_handle_down.gif" />
+    <Content Include="App_Themes\common\images\controls\slider_v_handle_hover.gif" />
+    <Content Include="App_Themes\common\images\icons\admin.svg" />
+    <Content Include="App_Themes\common\images\icons\AdminDashboard.svg" />
+    <Content Include="App_Themes\common\images\icons\back.svg" />
+    <Content Include="App_Themes\common\images\icons\BarChart_96x48.png" />
+    <Content Include="App_Themes\common\images\icons\BOLs.svg" />
+    <Content Include="App_Themes\common\images\icons\bubble-img.gif" />
+    <Content Include="App_Themes\common\images\icons\bulkcancel-bubble.gif" />
+    <Content Include="App_Themes\common\images\icons\bulkconfirm-bubble.gif" />
+    <Content Include="App_Themes\common\images\icons\BuyNow.svg" />
+    <Content Include="App_Themes\common\images\icons\cancel-btn.gif" />
+    <Content Include="App_Themes\common\images\icons\cancel-bubble.gif" />
+    <Content Include="App_Themes\common\images\icons\cancel.svg" />
+    <Content Include="App_Themes\common\images\icons\chosen-sprite%402x.png" />
+    <Content Include="App_Themes\common\images\icons\chosen-sprite.png" />
+    <Content Include="App_Themes\common\images\icons\confirm-btn.gif" />
+    <Content Include="App_Themes\common\images\icons\confirm-bubble.gif" />
+    <Content Include="App_Themes\common\images\icons\Contracts.svg" />
+    <Content Include="App_Themes\common\images\icons\controls.svg" />
+    <Content Include="App_Themes\common\images\icons\CreditCard.svg" />
+    <Content Include="App_Themes\common\images\icons\csv_export.png" />
+    <Content Include="App_Themes\common\images\icons\csv_export_gray.png" />
+    <Content Include="App_Themes\common\images\icons\Dashboard.svg" />
+    <Content Include="App_Themes\common\images\icons\DataTable_96x48.png" />
+    <Content Include="App_Themes\common\images\icons\Disputewarning.png" />
+    <Content Include="App_Themes\common\images\icons\download.png" />
+    <Content Include="App_Themes\common\images\icons\dropdown_arrow.svg" />
+    <Content Include="App_Themes\common\images\icons\empty.svg" />
+    <Content Include="App_Themes\common\images\icons\error.png" />
+    <Content Include="App_Themes\common\images\icons\excel.png" />
+    <Content Include="App_Themes\common\images\icons\excel.svg" />
+    <Content Include="App_Themes\common\images\icons\Generate_Report.png" />
+    <Content Include="App_Themes\common\images\icons\gold_star_blank.png" />
+    <Content Include="App_Themes\common\images\icons\gold_star_selected.png" />
+    <Content Include="App_Themes\common\images\icons\GoogleMapsIcons\spotlight-poi-medium-green.png" />
+    <Content Include="App_Themes\common\images\icons\GoogleMapsIcons\spotlight-poi-medium-red.png" />
+    <Content Include="App_Themes\common\images\icons\header-columns-bg.gif" />
+    <Content Include="App_Themes\common\images\icons\headset.svg" />
+    <Content Include="App_Themes\common\images\icons\help_nav.svg" />
+    <Content Include="App_Themes\common\images\icons\icon_search.svg" />
+    <Content Include="App_Themes\common\images\icons\info.png" />
+    <Content Include="App_Themes\common\images\icons\information.png" />
+    <Content Include="App_Themes\common\images\icons\information.svg" />
+    <Content Include="App_Themes\common\images\icons\info_small.png" />
+    <Content Include="App_Themes\common\images\icons\Invoices.svg" />
+    <Content Include="App_Themes\common\images\icons\leftgrey-curve.gif" />
+    <Content Include="App_Themes\common\images\icons\letter.svg" />
+    <Content Include="App_Themes\common\images\icons\LineChart_96x48.png" />
+    <Content Include="App_Themes\common\images\icons\list.svg" />
+    <Content Include="App_Themes\common\images\icons\logout.svg" />
+    <Content Include="App_Themes\common\images\icons\midgrey-bg.gif" />
+    <Content Include="App_Themes\common\images\icons\minus.png" />
+    <Content Include="App_Themes\common\images\icons\no-results.svg" />
+    <Content Include="App_Themes\common\images\icons\order-entry-icon.png" />
+    <Content Include="App_Themes\common\images\icons\orderdetails-bg.gif" />
+    <Content Include="App_Themes\common\images\icons\orderentry-btmbg.gif" />
+    <Content Include="App_Themes\common\images\icons\orderentry-midbg.gif" />
+    <Content Include="App_Themes\common\images\icons\OrderEntry_btmlarge.png" />
+    <Content Include="App_Themes\common\images\icons\OrderEntry_darkleftcurve.png" />
+    <Content Include="App_Themes\common\images\icons\OrderEntry_darkmidcurve.png" />
+    <Content Include="App_Themes\common\images\icons\OrderEntry_darkrightcurve.png" />
+    <Content Include="App_Themes\common\images\icons\pdf.png" />
+    <Content Include="App_Themes\common\images\icons\pdf_export.png" />
+    <Content Include="App_Themes\common\images\icons\pen.svg" />
+    <Content Include="App_Themes\common\images\icons\PieChart_96x48.png" />
+    <Content Include="App_Themes\common\images\icons\plus.png" />
+    <Content Include="App_Themes\common\images\icons\PriceAnalysis.svg" />
+    <Content Include="App_Themes\common\images\icons\Prices.svg" />
+    <Content Include="App_Themes\common\images\icons\PriceSettings.svg" />
+    <Content Include="App_Themes\common\images\icons\Purchases.svg" />
+    <Content Include="App_Themes\common\images\icons\QDE.svg" />
+    <Content Include="App_Themes\common\images\icons\rightgrey-curve.gif" />
+    <Content Include="App_Themes\common\images\icons\setting.svg" />
+    <Content Include="App_Themes\common\images\icons\silver_star_blank.png" />
+    <Content Include="App_Themes\common\images\icons\silver_star_selected.png" />
+    <Content Include="App_Themes\common\images\icons\sprite.png" />
+    <Content Include="App_Themes\common\images\icons\stoplimit-btn.png" />
+    <Content Include="App_Themes\common\images\icons\submit-order-btn.gif" />
+    <Content Include="App_Themes\common\images\icons\time-bg.png" />
+    <Content Include="App_Themes\common\images\icons\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="App_Themes\common\images\icons\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="App_Themes\common\images\icons\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="App_Themes\common\images\icons\ui-icons_ef8c08_256x240.png" />
+    <Content Include="App_Themes\common\images\icons\ui-icons_ffffff_256x240.png" />
+    <Content Include="App_Themes\common\images\icons\warning.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\animated-overlay.gif" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-icons_222222_256x240.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-icons_2e83ff_256x240.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-icons_454545_256x240.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-icons_888888_256x240.png" />
+    <Content Include="App_Themes\common\images\jquery-ui\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="App_Themes\common\images\layout\ChartBottomShadow.png" />
+    <Content Include="App_Themes\common\images\layout\ChartTopShadow.png" />
+    <Content Include="App_Themes\common\images\layout\content\login-bottom.png" />
+    <Content Include="App_Themes\common\images\layout\content\login-center-tile.png" />
+    <Content Include="App_Themes\common\images\layout\content\login-top.png" />
+    <Content Include="App_Themes\common\images\layout\content\primary-full-bottom.png" />
+    <Content Include="App_Themes\common\images\layout\content\primary-full-tile.png" />
+    <Content Include="App_Themes\common\images\layout\content\primary-full-top.png" />
+    <Content Include="App_Themes\common\images\layout\content\primary-full-variable.png" />
+    <Content Include="App_Themes\common\images\layout\header\DataTableHeader.png" />
+    <Content Include="App_Themes\common\images\layout\header\search-bg.gif" />
+    <Content Include="App_Themes\common\images\layout\header\search.png" />
+    <Content Include="App_Themes\common\images\widgetPreviews\creditline.PNG" />
+    <Content Include="App_Themes\common\images\widgetPreviews\invoices.PNG" />
+    <Content Include="App_Themes\common\images\widgetPreviews\openlimitorders.PNG" />
+    <Content Include="App_Themes\common\images\widgetPreviews\orderspendingapproval.PNG" />
+    <Content Include="App_Themes\common\images\widgetPreviews\pricesbylocation.PNG" />
+    <Content Include="App_Themes\common\images\widgetPreviews\rackprices.PNG" />
+    <Content Include="App_Themes\common\images\widgetPreviews\recentlyclosedorders.PNG" />
+    <Content Include="App_Themes\common\images\widgetPreviews\recenttrades.PNG" />
+    <Content Include="App_Themes\common\images\widgetPreviews\weather.PNG" />
+    <Content Include="App_Themes\common\images\window\gear-b-512px-white.svg" />
+    <Content Include="App_Themes\common\images\window\window-maximize-512px-black.svg" />
+    <Content Include="App_Themes\common\images\window\window-maximize-512px-white.svg" />
+    <Content Include="App_Themes\common\PIE.htc" />
+    <Content Include="App_Themes\Custom\css\real-time-pricing.css" />
+    <Content Include="App_Themes\Custom\css\widgets.css" />
+    <Content Include="App_Themes\Custom\images\content\pm-side.jpg" />
+    <Content Include="App_Themes\Custom\images\content\pm-side.png" />
+    <Content Include="App_Themes\Custom\images\content\login-back.jpg" />
+    <Content Include="App_Themes\Custom\images\logos\Alli Intro Once.gif" />
+    <Content Include="App_Themes\Custom\images\logos\Alli Intro.gif" />
+    <Content Include="App_Themes\Custom\images\logos\Alli Logo Grey Square Black.jpg" />
+    <Content Include="App_Themes\Custom\images\logos\Alli Logo Square Tag.png" />
+    <Content Include="App_Themes\Custom\images\logos\alliance-energy-logo-WHITE-on-WHITE.png" />
+    <Content Include="App_Themes\Custom\images\logos\AllianceLogo.png" />
+    <Content Include="App_Themes\Custom\images\logos\login-logo.png" />
+    <Content Include="App_Themes\Custom\images\logos\favicon.png" />
+    <Content Include="App_Themes\Custom\images\logos\logo.png" />
+    <Content Include="App_Themes\Custom\images\logos\logo_horizontal.png" />
+    <Content Include="App_Themes\Custom\images\logos\logo_text.png" />
+    <Content Include="App_Themes\Custom\images\logos\logo_thumb.png" />
+    <Content Include="App_Themes\Custom\images\logos\old_logo.png" />
+    <Content Include="App_Themes\Custom\Scripts\Highcharts\Theme.js" />
+    <Content Include="Areas\Admin\Views\ContactInfoAdmin\ContactInfoAdmin.js" />
+    <Content Include="Areas\Admin\Views\DataHierarchy\DataHierarchyView.cshtml" />
+    <Content Include="Areas\Admin\Views\DataHierarchy\Scripts\HierarchyView.js" />
+    <Content Include="Areas\Admin\Views\DataHierarchy\Styles\HierarchyView.css" />
+    <Content Include="Areas\Admin\Views\LocationMaintenance\LocationMaintenance.css" />
+    <Content Include="Areas\Admin\Views\LocationMaintenance\LocationMaintenance.js" />
+    <Content Include="Areas\Admin\Views\LocationUpload\Configuration.json" />
+    <Content Include="Areas\Admin\Views\LocationUpload\LocationUpload.cshtml" />
+    <Content Include="Areas\Admin\Views\LocationUpload\ProcessedLocationsGrid.cshtml" />
+    <Content Include="Areas\Admin\Views\LocationUpload\ProcessedLocationSheets.cshtml" />
+    <Content Include="Areas\Admin\Views\LocationUpload\scripts\ClientTemplates.js" />
+    <Content Include="Areas\Admin\Views\LocationUpload\scripts\ValidationPopovers.js" />
+    <Content Include="Areas\Admin\Views\LocationUpload\styles\styles.css" />
+    <Content Include="Areas\Admin\Views\PriceInstrumentUpload\Configuration.json" />
+    <Content Include="Areas\Admin\Views\PriceInstrumentUpload\partials\TemplateDownloadTab.cshtml" />
+    <Content Include="Areas\Admin\Views\PriceInstrumentUpload\PriceInstrumentUpload.cshtml" />
+    <Content Include="Areas\Admin\Views\PriceInstrumentUpload\ProcessedPriceInstrumentsGrid.cshtml" />
+    <Content Include="Areas\Admin\Views\PriceInstrumentUpload\ProcessedPriceInstrumentSheets.cshtml" />
+    <Content Include="Areas\Admin\Views\PriceInstrumentUpload\scripts\ClientTemplates.js" />
+    <Content Include="Areas\Admin\Views\PriceInstrumentUpload\scripts\ValidationPopovers.js" />
+    <Content Include="Areas\Admin\Views\PriceInstrumentUpload\styles\styles.css" />
+    <Content Include="Areas\Admin\Views\ProductMaintenance\ProductMaintenance.js" />
+    <Content Include="Areas\Admin\Views\ProductUpload\Configuration.json" />
+    <Content Include="Areas\Admin\Views\ProductUpload\ProcessedProductsGrid.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductUpload\ProcessedProductSheets.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductUpload\ProductUpload.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductUpload\scripts\ClientTemplates.js" />
+    <Content Include="Areas\Admin\Views\ProductUpload\scripts\ValidationPopovers.js" />
+    <Content Include="Areas\Admin\Views\ProductUpload\styles\styles.css" />
+    <Content Include="Areas\Admin\Views\UserMaintenance\UserMaintenance.css" />
+    <Content Include="Areas\Admin\Views\UserMaintenance\UserMaintenance.js" />
+    <Content Include="Areas\Admin\Views\UserMaintenance\_CreateOrUpdateUser.cshtml" />
+    <Content Include="Areas\Admin\Views\UserMaintenance\_ManageRoles.cshtml" />
+    <Content Include="Areas\Admin\Views\UserMaintenance\_SetAssociations.cshtml" />
+    <Content Include="Areas\Admin\Views\UserMaintenance\_UserMaintenanceFiltersActions.cshtml" />
+    <Content Include="Areas\Admin\Views\UserMaintenance\_UserMaintenanceGrid.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\DashboardTemplates\DefaultTableTemplate.html" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\DashboardTemplates\loader.css" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Scripts\ConfigurableDashboard.js" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\jquery.autosize.js" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\RecentTradesMerged\RecentTrades.js" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Weather\scripts\jquery.simpleWeather.js" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Weather\scripts\jquery.simpleWeather.min.js" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Weather\scripts\weather.js" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Weather\styles\weather.css" />
+    <Content Include="Areas\Core\Views\DisputeInvoice\DisputeInvoice.css" />
+    <Content Include="Areas\Core\Views\EntityReport\EditorTemplates\AmountRangePicker.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\EntityReport.js" />
+    <Content Include="Areas\Core\Views\Rateability\scripts\Rateability.js" />
+    <Content Include="Areas\Core\Views\Rateability\styles\Rateability.css" />
+    <Content Include="Areas\Core\Views\SendMessage\RichTextPreview\resources\bar_ryb.png" />
+    <Content Include="Areas\Core\Views\SendMessage\RichTextPreview\resources\Default.css" />
+    <Content Include="Areas\Core\Views\SendMessage\RichTextPreview\resources\logo.png" />
+    <Content Include="Areas\Core\Views\TradePerformance\TradePerformance.css" />
+    <Content Include="Areas\Core\Views\TradePerformance\TradePerformance.js" />
+    <Content Include="Areas\Custom\Views\ConfigurableDashboard\RecentTradesMerged\RecentTrades.js" />
+    <Content Include="Areas\Custom\Views\ContractPerformance\ContractPerformance.css" />
+    <Content Include="Areas\Custom\Views\ContractPerformance\ContractPerformance.js" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\css\customerprofile.css" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Scripts\CustomerProfile.js" />
+    <Content Include="Areas\Custom\Views\CustomTruckAndRailQuote\TruckAndRailQuote.css" />
+    <Content Include="Areas\Custom\Views\CustomTruckAndRailQuote\TruckAndRailQuote.js" />
+    <Content Include="Areas\Custom\Views\PositionWorkbench\TreeView.js" />
+    <Content Include="Areas\Custom\Views\PositionWorkbench\PositionGrid.js" />
+    <Content Include="Areas\Custom\Views\PriceAnalysis\PriceAnalysis.css" />
+    <Content Include="Areas\Custom\Views\PriceAnalysis\PriceAnalysis.js" />
+    <Content Include="Areas\Custom\Views\Pricing\MarketerPriceWorkbench.js" />
+    <Content Include="Areas\Custom\Views\RackPriceAnalysis\RackPriceAnalysis.css" />
+    <Content Include="Areas\Custom\Views\RackPriceAnalysis\RackPriceAnalysis.js" />
+    <Content Include="Areas\Custom\Views\ContractPerformance\DateRangeSlider.js" />
+    <Content Include="Areas\Custom\Views\Shared\DemandForecast.js" />
+    <Content Include="Areas\Custom\Views\Workflow\css\workflow.css" />
+    <Content Include="Areas\DeliveryRequest\Views\scripts\DeliveryRequest.js" />
+    <Content Include="Areas\DeliveryRequest\Views\styles\DeliveryRequest.css" />
+    <Content Include="Areas\Login\Views\ForgotPassword\ForgotPassword.css" />
+    <Content Include="Areas\Login\Views\Login\Login.css" />
+    <Content Include="Areas\Login\Views\Login\login.js" />
+    <Content Include="Areas\Login\Views\Login\Pin.css" />
+    <Content Include="Areas\Login\Views\Login\Pin.js" />
+    <Content Include="Areas\Pricing\Views\AvailabilityMaintenance\scripts\AvailabilityMaintenanceGrid.js" />
+    <Content Include="Areas\Pricing\Views\AvailabilityMaintenance\scripts\Filter.js" />
+    <Content Include="Areas\Pricing\Views\AvailabilityMaintenance\scripts\TreeViews.js" />
+    <Content Include="Areas\Pricing\Views\AvailabilityMaintenance\styles\AvailabilityMaintenance.css" />
+    <Content Include="Areas\Pricing\Views\AvailabilityMaintenance\styles\filter.css" />
+    <Content Include="Areas\Pricing\Views\AvailabilityMaintenance\styles\PricingTool.css" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceConfiguration\css\CalculatedPriceConfiguration.css" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Forward\scripts\Filter.js" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Forward\scripts\TreeViews.js" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Forward\styles\filter.css" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Forward\styles\forwardCalculatedPriceReport.css" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Prompt\scripts\Filter.js" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Prompt\scripts\TreeViews.js" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Prompt\styles\filter.css" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Prompt\styles\promptCalculatedPriceReport.css" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\css\CalculatedValue.css" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\css\codemirror.css" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\css\show-hint.css" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\scripts\closebrackets.js" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\scripts\codemirror.js" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\scripts\matchbrackets.js" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\scripts\show-hint.js" />
+    <Content Include="Areas\Pricing\Views\HeatingDayMaintenance\scripts\Filter.js" />
+    <Content Include="Areas\Pricing\Views\HeatingDayMaintenance\scripts\HeatingDayMaintenanceGrid.js" />
+    <Content Include="Areas\Pricing\Views\HeatingDayMaintenance\scripts\TreeViews.js" />
+    <Content Include="Areas\Pricing\Views\HeatingDayMaintenance\styles\filter.css" />
+    <Content Include="Areas\Pricing\Views\HeatingDayMaintenance\styles\HeatingDayMaintenance.css" />
+    <Content Include="Areas\Pricing\Views\HeatingDayMaintenance\styles\PricingTool.css" />
+    <Content Include="Areas\Pricing\Views\ManagePrices\DateRangeSlider.js" />
+    <Content Include="Areas\Pricing\Views\ManagePrices\styles.css" />
+    <Content Include="Areas\Pricing\Views\PriceConfigurationLookup\ManageLookup\css\styles.css" />
+    <Content Include="Areas\Pricing\Views\ProductLocationPairMaintenance\scripts\Filter.js" />
+    <Content Include="Areas\Pricing\Views\ProductLocationPairMaintenance\scripts\TreeViews.js" />
+    <Content Include="Areas\Pricing\Views\ProductLocationPairMaintenance\styles\filter.css" />
+    <Content Include="Areas\Pricing\Views\ProductLocationPairMaintenance\styles\productLocationPairMaintenance.css" />
+    <Content Include="Areas\Pricing\Views\RackPriceAnalysis\highcharts-export-csv.js" />
+    <Content Include="Areas\Pricing\Views\RackPriceAnalysis\RackPriceAnalysis.css" />
+    <Content Include="Areas\Pricing\Views\RackPriceAnalysis\RackPriceAnalysis.js" />
+    <Content Include="Areas\Pricing\Views\TradeExecutionPriceMaintenance\css\tradeExecutionPriceMaintenance.css" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\Partial\ModalPopup\ForwardConfirmPopup.js" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\scripts\Filter.js" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\scripts\ForwardTradeExecution.js" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\scripts\TreeViews.js" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\styles\filter.css" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\styles\ForwardTradeExecution.css" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\styles\PricingTool.css" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Shared\styles\boostrapCheckboxes.css" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Shared\styles\PromptExecution.css" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\scripts\Filter.js" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\scripts\PromptTradeExecution.js" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\scripts\TreeViews.js" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\styles\boostrapCheckboxes.css" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\styles\filter.css" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\styles\PromptExecution.css" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\EditPriceCounterParty.js" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntry.css" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntry.js" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryIndexInfo.js" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntry_Custom.js" />
+    <Content Include="Areas\UserSetting\Views\UserInfo\userinfo.css" />
+    <Content Include="Areas\UserSetting\Views\UserInfo\UserInfo.js" />
+    <Content Include="Dependencies\Microsoft.IdentityModel.Extensions.dll" />
+    <Content Include="favicon.png" />
+    <Content Include="Global.asax" />
+    <Content Include="gravitate_favicon.jpg" />
+    <Content Include="gravitate_favicon.png" />
+    <Content Include="HTML\QuartzCronExpressions.htm" />
+    <Content Include="Images\accessdenied.png" />
+    <Content Include="Images\ajax-loader-2.gif" />
+    <Content Include="Images\apple-touch-icon-ipad.png" />
+    <Content Include="Images\apple-touch-icon-iphone4.png" />
+    <Content Include="Images\apple-touch-icon.png" />
+    <Content Include="Images\bar_bg.png" />
+    <Content Include="Images\bar_green.png" />
+    <Content Include="Images\bar_red.png" />
+    <Content Include="Images\bar_ryb.png" />
+    <Content Include="Images\bar_yellow.png" />
+    <Content Include="Images\down.gif" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\general-error.png" />
+    <Content Include="Images\icon_dashboard.png" />
+    <Content Include="Images\icon_invoice.png" />
+    <Content Include="Images\icon_liftings.png" />
+    <Content Include="Images\icon_prices.png" />
+    <Content Include="Images\icon_trades.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logo_gravitate.png" />
+    <Content Include="Images\Market_Commentary_Video.png" />
+    <Content Include="Images\pagenotfound.png" />
+    <Content Include="Images\preloader.gif" />
+    <Content Include="Images\session_bg.gif" />
+    <Content Include="Images\session_icon.gif" />
+    <Content Include="Images\transparent_48x48.gif" />
+    <Content Include="Images\up.gif" />
+    <Content Include="js\jquery.bubblepopup.v2.3.1.css" />
+    <Content Include="js\jquery.bubblepopup.v2.3.1.min.js" />
+    <Content Include="js\jquery.hint.js" />
+    <Content Include="js\jquerybubblepopup-theme\black\bottom-left.png" />
+    <Content Include="js\jquerybubblepopup-theme\black\bottom-middle.png" />
+    <Content Include="js\jquerybubblepopup-theme\black\bottom-right.png" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\bottom-left.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\bottom-middle.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\bottom-right.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\middle-left.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\middle-right.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\tail-bottom.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\tail-left.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\tail-right.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\tail-top.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\top-left.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\top-middle.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\ie\top-right.gif" />
+    <Content Include="js\jquerybubblepopup-theme\black\middle-left.png" />
+    <Content Include="js\jquerybubblepopup-theme\black\middle-right.png" />
+    <Content Include="js\jquerybubblepopup-theme\black\tail-bottom.png" />
+    <Content Include="js\jquerybubblepopup-theme\black\tail-left.png" />
+    <Content Include="js\jquerybubblepopup-theme\black\tail-right.png" />
+    <Content Include="js\jquerybubblepopup-theme\black\tail-top.png" />
+    <Content Include="js\jquerybubblepopup-theme\black\top-left.png" />
+    <Content Include="js\jquerybubblepopup-theme\black\top-middle.png" />
+    <Content Include="js\jquerybubblepopup-theme\black\top-right.png" />
+    <Content Include="js\Packery\GravitatePackery.js" />
+    <Content Include="js\Prices\contractprices.js" />
+    <Content Include="js\Prices\jquery.history.js" />
+    <Content Include="js\Prices\orderentry.js" />
+    <Content Include="js\Prices\RealTimePrices.js" />
+    <Content Include="js\Prices\RealTimePrices_Data.js" />
+    <Content Include="Log4Net.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="GravitateWebsite.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AppSettings.config.template">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Log4Net.config.template" />
+    <Content Include="Areas\UserSetting\Views\ChangePassword\Widgets\Mobile.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\TradePageDetail.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\InvoicePageDetail.cshtml" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
+    <Content Include="Scripts\bootstrap\datetimepicker\tempusdominus.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap\popper.min.js" />
+    <Content Include="Scripts\bootstrap\select\bootstrap-select.min.css" />
+    <Content Include="Scripts\bootstrap\select\bootstrap-select.min.js" />
+    <Content Include="Areas\Custom\Views\Shared\CustomerTerminalRelationship.cshtml" />
+    <Content Include="Areas\Custom\Views\Shared\EditorTemplates\VolumeEditor.cshtml" />
+    <Content Include="Areas\Custom\Views\Shared\LockConfirmation.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\DisplayCustomerProfile.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\NewCustomerProfileForm.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\CustomerProfileWorkflow\SelectBillFreightAndCarriers.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\CustomerProfileWorkflow\SelectContractContacts.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\CustomerProfileWorkflow\SelectCounterparty.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\CustomerProfileWorkflow\SelectDestinations.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\CustomerProfileWorkflow\SelectPriceContacts.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\CustomerProfileWorkflow\SelectTerminals.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\DisplayCustomerProfile\DisplayBillFreightAndCarriers.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\DisplayCustomerProfile\DisplayContacts.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\DisplayCustomerProfile\DisplayCounterparty.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\DisplayCustomerProfile\DisplayDestinations.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\DisplayCustomerProfile\DisplayTerminals.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\DisplayCustomerProfile\DisplayWorkflowInformation.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomerProfile\Partial\shared\SectionTitle.cshtml" />
+    <Content Include="Areas\Custom\Views\Shared\InvalidInformation.cshtml" />
+    <Content Include="Areas\Custom\Views\Workflow\CompleteItem\WorkflowItemAlreadyCompleted.cshtml" />
+    <Content Include="Areas\Custom\Views\Workflow\CompleteItem\WorkflowItemCompletionSuccess.cshtml" />
+    <Content Include="Areas\Custom\Views\Workflow\Display\DisplayWorkflow.cshtml" />
+    <Content Include="Areas\Custom\Views\Workflow\Display\partial\WorkflowHeader.cshtml" />
+    <Content Include="Areas\Custom\Views\Workflow\Display\partial\WorkflowItems.cshtml" />
+    <Content Include="Areas\Custom\Views\PriceAnalysis\PriceAnalysis.cshtml" />
+    <Content Include="Areas\Custom\Views\Pricing\Pricing.cshtml" />
+    <Content Include="Areas\Custom\Views\RackPriceAnalysis\RackPriceAnalysis.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\PropaneStock.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Weather\Forecast.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\PropaneProductionImports.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\PropaneDemand.cshtml" />
+    <Content Include="Areas\Custom\Views\ContractPerformance\ContractPerformance.cshtml" />
+    <Content Include="Areas\Custom\Views\ContractPerformance\DateRangeSlider.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryFormulaInfo.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryFreightInfo.cshtml" />
+    <Content Include="Areas\Pricing\Views\ManagePrices\ManagePrices.cshtml" />
+    <Content Include="Areas\Pricing\Views\ManagePrices\DateRangeSlider.cshtml" />
+    <Content Include="Areas\Custom\Views\ConfigurableDashboard\MarketDocument.cshtml" />
+    <Content Include="Areas\Pricing\Views\ManagePrices\AddPriceRowDialog.cshtml" />
+    <Content Include="Areas\Custom\Views\TerminalMaintenance\TerminalMaintenance.cshtml" />
+    <Content Include="Areas\Custom\Views\TerminalMaintenance\AddTerminalDialog.cshtml" />
+    <Content Include="App_Themes\common\css\flaticon\_flaticon.scss" />
+    <Content Include="App_Themes\common\css\master_components\public_master_body_styles.scss" />
+    <Content Include="App_Themes\common\fonts\flaticon\Flaticon.eot" />
+    <Content Include="App_Themes\common\fonts\flaticon\Flaticon.ttf" />
+    <Content Include="App_Themes\common\fonts\flaticon\Flaticon.woff" />
+    <Content Include="App_Themes\common\fonts\flaticon\Flaticon.woff2" />
+    <Content Include="App_Themes\common\fonts\font-awesome\fontawesome-webfont.eot" />
+    <Content Include="App_Themes\common\fonts\font-awesome\fontawesome-webfont.ttf" />
+    <Content Include="App_Themes\common\fonts\font-awesome\fontawesome-webfont.woff" />
+    <Content Include="App_Themes\common\fonts\font-awesome\fontawesome-webfont.woff2" />
+    <Content Include="App_Themes\common\fonts\font-awesome\FontAwesome.otf" />
+    <Content Include="App_Themes\common\fonts\font-awesome\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Themes\common\fonts\font-awesome\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Themes\common\fonts\font-awesome\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Themes\common\fonts\font-awesome\glyphicons-halflings-regular.woff2" />
+    <Content Include="App_Themes\Custom\css\theme_master.scss" />
+    <Content Include="App_Themes\Custom\css\theme_mobile.scss" />
+    <Content Include="Areas\Core\Views\SendMessage\SendMessageQuickDialog.cshtml" />
+    <Content Include="Areas\Login\Views\Login\_LoginFooter.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\EntityReportFeatureTour.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomTradeEntry\CustomTradeEntryPricesByPeriod.cshtml" />
+    <Content Include="Areas\Custom\Views\ConfigurableDashboard\CustomAgingWidget.cshtml" />
+    <Content Include="Areas\Custom\Views\ConfigurableDashboard\CustomCreditWidget.cshtml" />
+    <Content Include="Areas\Custom\Views\ConfigurableDashboard\CustomUpcomingPaymentsWidget.cshtml" />
+    <Content Include="Areas\Custom\Views\PositionWorkbench\PositionGrid.cshtml" />
+    <Content Include="Areas\Custom\Views\PositionWorkbench\PositionGrid_RazorEditor.cshtml" />
+    <Content Include="Areas\Custom\Views\PositionWorkbench\SectionTitle.cshtml" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Scripts\GoogleMaps\google-maps-3-vs-1-0-vsdoc.js" />
+    <Content Include="Scripts\bootstrap\toggle\bootstrap4-toggle.css" />
+    <Content Include="Scripts\bootstrap\toggle\bootstrap4-toggle.js" />
+    <Content Include="Scripts\FileSaver.js" />
+    <Content Include="Scripts\GoogleMaps\google-maps-3-vs-1-0.js" />
+    <Content Include="Scripts\Highcharts\modules\accessibility.js" />
+    <Content Include="Scripts\Highcharts\modules\accessibility.src.js" />
+    <Content Include="Scripts\Highcharts\modules\annotations-advanced.js" />
+    <Content Include="Scripts\Highcharts\modules\annotations-advanced.src.js" />
+    <Content Include="Scripts\Highcharts\modules\annotations.js" />
+    <Content Include="Scripts\Highcharts\modules\annotations.src.js" />
+    <Content Include="Scripts\Highcharts\modules\arrow-symbols.js" />
+    <Content Include="Scripts\Highcharts\modules\arrow-symbols.src.js" />
+    <Content Include="Scripts\Highcharts\modules\boost-canvas.js" />
+    <Content Include="Scripts\Highcharts\modules\boost-canvas.src.js" />
+    <Content Include="Scripts\Highcharts\modules\boost.js" />
+    <Content Include="Scripts\Highcharts\modules\boost.src.js" />
+    <Content Include="Scripts\Highcharts\modules\broken-axis.js" />
+    <Content Include="Scripts\Highcharts\modules\broken-axis.src.js" />
+    <Content Include="Scripts\Highcharts\modules\bullet.js" />
+    <Content Include="Scripts\Highcharts\modules\bullet.src.js" />
+    <Content Include="Scripts\Highcharts\modules\current-date-indicator.js" />
+    <Content Include="Scripts\Highcharts\modules\current-date-indicator.src.js" />
+    <Content Include="Scripts\Highcharts\modules\cylinder.js" />
+    <Content Include="Scripts\Highcharts\modules\cylinder.src.js" />
+    <Content Include="Scripts\Highcharts\modules\datagrouping.js" />
+    <Content Include="Scripts\Highcharts\modules\datagrouping.src.js" />
+    <Content Include="Scripts\Highcharts\modules\debugger.js" />
+    <Content Include="Scripts\Highcharts\modules\debugger.src.js" />
+    <Content Include="Scripts\Highcharts\modules\dependency-wheel.js" />
+    <Content Include="Scripts\Highcharts\modules\dependency-wheel.src.js" />
+    <Content Include="Scripts\Highcharts\modules\dotplot.js" />
+    <Content Include="Scripts\Highcharts\modules\dotplot.src.js" />
+    <Content Include="Scripts\Highcharts\modules\drag-panes.js" />
+    <Content Include="Scripts\Highcharts\modules\drag-panes.src.js" />
+    <Content Include="Scripts\Highcharts\modules\draggable-points.js" />
+    <Content Include="Scripts\Highcharts\modules\draggable-points.src.js" />
+    <Content Include="Scripts\Highcharts\modules\export-data.js" />
+    <Content Include="Scripts\Highcharts\modules\export-data.src.js" />
+    <Content Include="Scripts\Highcharts\modules\full-screen.js" />
+    <Content Include="Scripts\Highcharts\modules\full-screen.src.js" />
+    <Content Include="Scripts\Highcharts\modules\funnel3d.js" />
+    <Content Include="Scripts\Highcharts\modules\funnel3d.src.js" />
+    <Content Include="Scripts\Highcharts\modules\gantt.js" />
+    <Content Include="Scripts\Highcharts\modules\gantt.src.js" />
+    <Content Include="Scripts\Highcharts\modules\grid-axis.js" />
+    <Content Include="Scripts\Highcharts\modules\grid-axis.src.js" />
+    <Content Include="Scripts\Highcharts\modules\histogram-bellcurve.js" />
+    <Content Include="Scripts\Highcharts\modules\histogram-bellcurve.src.js" />
+    <Content Include="Scripts\Highcharts\modules\item-series.js" />
+    <Content Include="Scripts\Highcharts\modules\item-series.src.js" />
+    <Content Include="Scripts\Highcharts\modules\networkgraph.js" />
+    <Content Include="Scripts\Highcharts\modules\networkgraph.src.js" />
+    <Content Include="Scripts\Highcharts\modules\offline-exporting.js" />
+    <Content Include="Scripts\Highcharts\modules\offline-exporting.src.js" />
+    <Content Include="Scripts\Highcharts\modules\oldie-polyfills.js" />
+    <Content Include="Scripts\Highcharts\modules\oldie-polyfills.src.js" />
+    <Content Include="Scripts\Highcharts\modules\oldie.js" />
+    <Content Include="Scripts\Highcharts\modules\oldie.src.js" />
+    <Content Include="Scripts\Highcharts\modules\organization.js" />
+    <Content Include="Scripts\Highcharts\modules\organization.src.js" />
+    <Content Include="Scripts\Highcharts\modules\overlapping-datalabels.js" />
+    <Content Include="Scripts\Highcharts\modules\overlapping-datalabels.src.js" />
+    <Content Include="Scripts\Highcharts\modules\parallel-coordinates.js" />
+    <Content Include="Scripts\Highcharts\modules\parallel-coordinates.src.js" />
+    <Content Include="Scripts\Highcharts\modules\pareto.js" />
+    <Content Include="Scripts\Highcharts\modules\pareto.src.js" />
+    <Content Include="Scripts\Highcharts\modules\pathfinder.js" />
+    <Content Include="Scripts\Highcharts\modules\pathfinder.src.js" />
+    <Content Include="Scripts\Highcharts\modules\pattern-fill.js" />
+    <Content Include="Scripts\Highcharts\modules\pattern-fill.src.js" />
+    <Content Include="Scripts\Highcharts\modules\price-indicator.js" />
+    <Content Include="Scripts\Highcharts\modules\price-indicator.src.js" />
+    <Content Include="Scripts\Highcharts\modules\pyramid3d.js" />
+    <Content Include="Scripts\Highcharts\modules\pyramid3d.src.js" />
+    <Content Include="Scripts\Highcharts\modules\rounded-corners.js" />
+    <Content Include="Scripts\Highcharts\modules\sankey.js" />
+    <Content Include="Scripts\Highcharts\modules\sankey.src.js" />
+    <Content Include="Scripts\Highcharts\modules\series-label.js" />
+    <Content Include="Scripts\Highcharts\modules\series-label.src.js" />
+    <Content Include="Scripts\Highcharts\modules\sonification.js" />
+    <Content Include="Scripts\Highcharts\modules\sonification.src.js" />
+    <Content Include="Scripts\Highcharts\modules\static-scale.js" />
+    <Content Include="Scripts\Highcharts\modules\static-scale.src.js" />
+    <Content Include="Scripts\Highcharts\modules\stock-tools.js" />
+    <Content Include="Scripts\Highcharts\modules\stock-tools.src.js" />
+    <Content Include="Scripts\Highcharts\modules\stock.js" />
+    <Content Include="Scripts\Highcharts\modules\stock.src.js" />
+    <Content Include="Scripts\Highcharts\modules\streamgraph.js" />
+    <Content Include="Scripts\Highcharts\modules\streamgraph.src.js" />
+    <Content Include="Scripts\Highcharts\modules\sunburst.js" />
+    <Content Include="Scripts\Highcharts\modules\sunburst.src.js" />
+    <Content Include="Scripts\Highcharts\modules\tilemap.js" />
+    <Content Include="Scripts\Highcharts\modules\tilemap.src.js" />
+    <Content Include="Scripts\Highcharts\modules\timeline.js" />
+    <Content Include="Scripts\Highcharts\modules\timeline.src.js" />
+    <Content Include="Scripts\Highcharts\modules\treegrid.js" />
+    <Content Include="Scripts\Highcharts\modules\treegrid.src.js" />
+    <Content Include="Scripts\Highcharts\modules\treemap.js" />
+    <Content Include="Scripts\Highcharts\modules\treemap.src.js" />
+    <Content Include="Scripts\Highcharts\modules\variable-pie.js" />
+    <Content Include="Scripts\Highcharts\modules\variable-pie.src.js" />
+    <Content Include="Scripts\Highcharts\modules\variwide.js" />
+    <Content Include="Scripts\Highcharts\modules\variwide.src.js" />
+    <Content Include="Scripts\Highcharts\modules\vector.js" />
+    <Content Include="Scripts\Highcharts\modules\vector.src.js" />
+    <Content Include="Scripts\Highcharts\modules\venn.js" />
+    <Content Include="Scripts\Highcharts\modules\venn.src.js" />
+    <Content Include="Scripts\Highcharts\modules\windbarb.js" />
+    <Content Include="Scripts\Highcharts\modules\windbarb.src.js" />
+    <Content Include="Scripts\Highcharts\modules\wordcloud.js" />
+    <Content Include="Scripts\Highcharts\modules\wordcloud.src.js" />
+    <Content Include="Scripts\Highcharts\modules\xrange.js" />
+    <Content Include="Scripts\Highcharts\modules\xrange.src.js" />
+    <Content Include="Scripts\inobounce.js" />
+    <Content Include="Scripts\lodash\lodash.js" />
+    <Content Include="Scripts\swiper\helper_functions.js" />
+    <Content Include="Scripts\swiper\swiper.min.css" />
+    <Content Include="Scripts\swiper\swiper.min.js" />
+    <Content Include="ViewOverrides\Areas\Core\Views\EntityReport\InvoicePageDetail.cshtml" />
+    <Content Include="ViewOverrides\Areas\Core\Views\EntityReport\TradePageDetail.cshtml" />
+    <Content Include="Areas\Custom\Views\Web.config" />
+    <Content Include="Areas\UserSetting\Views\Web.config" />
+    <Content Include="Areas\UserSetting\Views\UserInfo\UserInfo.cshtml" />
+    <Content Include="Areas\UserSetting\Views\UserInfo\Partial\ResetFeatureTourPopup.cshtml" />
+    <Content Include="Areas\UserSetting\Views\UserInfo\Partial\MessagingPreferences.cshtml" />
+    <Content Include="Areas\UserSetting\Views\UserInfo\Partial\ContactInfo.cshtml" />
+    <Content Include="Areas\UserSetting\Views\Theme\Theme.cshtml" />
+    <Content Include="Areas\UserSetting\Views\ProductLocationPreferences\ProductLocationPreferences.cshtml" />
+    <Content Include="Areas\UserSetting\Views\Notifications\Notifications.cshtml" />
+    <Content Include="Areas\UserSetting\Views\DistributionList\DistributionList.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\Web.config" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntry_Custom.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntrySaveResults.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryQuantityLimitByPeriod.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryPricesByPeriodDialog.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryPricesByPeriod.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryPriceCounterParty.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryIndexInfoDialog.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryIndexInfo.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryHeaderExtension.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryExtraInfoDialog_ExtensionPartial.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryExtraInfo.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryDetailQuantityLimitByPeriod.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryDetailQuantitiesByPeriodDialog.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryDetailQuantitiesByPeriod.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryDetailExtraInfoDialog.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryDeleted.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryConfirmDelete.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\Index.cshtml" />
+    <Content Include="Areas\Pricing\Views\Web.config" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Shared\SectionTitle.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\TradeSuccess.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\TradeExecution.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\ShowPromptDetails.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\Partial\TradeExecutionGrid.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\Partial\PromptFullDetails.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\Partial\PromptConfirmPopup.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\filter\FilterNoAccordion.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Reporting\ShowTradeDetails\TradeDetails.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Reporting\ShowTradeDetails\ConfirmChange.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\ShowMobilePromptSuccess.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\SelectType\SelectTradeType.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\SelectProductAndLocation\SelectProductLocation.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\SelectProductAndLocation\Partial\ProductLocationPanel.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\SelectProductAndLocation\Partial\ProdLocGridPanel.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\SelectProductAndLocation\DisplayOptions\ContentInPanelsAsRows.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\MobilePromptEntry.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\EnterDetails\EnterTradeDetails.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\ConfirmDetails\ConfirmTradeDetails.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\ShowForwardDetails.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\Partial\ModalPopup\ForwardConfirmPopup.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\Partial\ForwardFullDetails.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\ForwardTradeSuccess.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\ForwardTradeExecution.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Forward\filter\FilterNoAccordion.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\EntityActions\ShowTradeEntryChangeDialog.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecutionPriceMaintenance\TradeExecutionPricingMaintenance.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecutionPriceMaintenance\Partial\SectionTitle.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecutionPriceMaintenance\Partial\PriceMaintenanceGrid.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecutionPriceMaintenance\Partial\InstrumentOverride.cshtml" />
+    <Content Include="Areas\Pricing\Views\RackPriceAnalysis\RackPriceAnalysis.cshtml" />
+    <Content Include="Areas\Pricing\Views\RackPriceAnalysis\partial\RackPriceAnalysisGrid.cshtml" />
+    <Content Include="Areas\Pricing\Views\ProductLocationPairMaintenance\shared\SectionTitle.cshtml" />
+    <Content Include="Areas\Pricing\Views\ProductLocationPairMaintenance\ProductLocationPairMaintenance.cshtml" />
+    <Content Include="Areas\Pricing\Views\ProductLocationPairMaintenance\Partial\SectionTitle.cshtml" />
+    <Content Include="Areas\Pricing\Views\ProductLocationPairMaintenance\Partial\ProductLocationPairMaintenanceGrid.cshtml" />
+    <Content Include="Areas\Pricing\Views\ProductLocationPairMaintenance\filter\FilterNoAccordion.cshtml" />
+    <Content Include="Areas\Pricing\Views\HeatingDayMaintenance\Partial\shared\SectionTitle.cshtml" />
+    <Content Include="Areas\Pricing\Views\HeatingDayMaintenance\Partial\HeatingDayMaintenanceGrid.cshtml" />
+    <Content Include="Areas\Pricing\Views\HeatingDayMaintenance\HeatingDayMaintenance.cshtml" />
+    <Content Include="Areas\Pricing\Views\HeatingDayMaintenance\filter\FilterNoAccordion.cshtml" />
+    <Content Include="Areas\Pricing\Views\Confirmation\Confirmation.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\SecondaryDetails\PromptSecondaryDetailsPopup.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Prompt\shared\SectionTitle.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Prompt\PromptCalculatedPriceReport.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Prompt\Partial\SectionTitle.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Prompt\Partial\PromptCalculatedPriceGrid.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Prompt\filter\FilterNoAccordion.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Forward\shared\SectionTitle.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Forward\Partial\SectionTitle.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Forward\Partial\ForwardCalculatedPriceGrid.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Forward\ForwardCalculatedPriceReport.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceReport\Forward\filter\FilterNoAccordion.cshtml" />
+    <Content Include="Areas\Pricing\Views\AvailabilityMaintenance\Partial\shared\SectionTitle.cshtml" />
+    <Content Include="Areas\Pricing\Views\AvailabilityMaintenance\Partial\AvailabilityMaintenanceGrid_RazorEditor.cshtml" />
+    <Content Include="Areas\Pricing\Views\AvailabilityMaintenance\Partial\AvailabilityMaintenanceGrid.cshtml" />
+    <Content Include="Areas\Pricing\Views\AvailabilityMaintenance\filter\FilterNoAccordion.cshtml" />
+    <Content Include="Areas\Pricing\Views\AvailabilityMaintenance\AvailabilityMaintenance.cshtml" />
+    <Content Include="Areas\Login\Views\Web.config" />
+    <Content Include="Areas\Login\Views\LogOff\AccountNotSetUp.cshtml" />
+    <Content Include="Areas\Login\Views\Login\Mobile.cshtml" />
+    <Content Include="Areas\Login\Views\Login\Login.cshtml" />
+    <Content Include="Areas\Login\Views\Login\AccessDeniedAjax.cshtml" />
+    <Content Include="Areas\Login\Views\Login\AccessDenied.cshtml" />
+    <Content Include="Areas\Login\Views\ForgotPassword\Mobile.cshtml" />
+    <Content Include="Areas\Login\Views\ForgotPassword\ForgotPassword.cshtml" />
+    <Content Include="Areas\Login\Views\Deregister\Deregister.cshtml" />
+    <Content Include="Areas\Error\Views\Web.config" />
+    <Content Include="Areas\Error\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Core\Views\Web.config" />
+    <Content Include="Areas\Core\Views\UpdateMessage\MessageUpdated.cshtml" />
+    <Content Include="Areas\Core\Views\TradePerformance\TradePerformance.cshtml" />
+    <Content Include="Areas\Core\Views\TradePageActions\KnockoutActionConfirmation.cshtml" />
+    <Content Include="Areas\Core\Views\Tableau\Tableau.cshtml" />
+    <Content Include="Areas\Core\Views\SendMessage\Templates\BuyInterestNotification_Subject.cshtml" />
+    <Content Include="Areas\Core\Views\SendMessage\Templates\BuyInterestNotification_Body.cshtml" />
+    <Content Include="Areas\Core\Views\SendMessage\SendMessageRichTextContainer.cshtml" />
+    <Content Include="Areas\Core\Views\SendMessage\SendMessagePageContainer.cshtml" />
+    <Content Include="Areas\Core\Views\SendMessage\RichTextPreview\Master.cshtml" />
+    <Content Include="Areas\Core\Views\SendMessage\RichTextPreview\DistributionEmail.html.cshtml" />
+    <Content Include="Areas\Core\Views\SendMessage\Partial\SendMessage.cshtml" />
+    <Content Include="Areas\Core\Views\SendMessage\Partial\CreateAnnoucement.cshtml" />
+    <Content Include="Areas\Core\Views\Search\Search.cshtml" />
+    <Content Include="Areas\Core\Views\Rateability\RateabilityReport.cshtml" />
+    <Content Include="Areas\Core\Views\Mobile\Widgets\OrderTable.cshtml" />
+    <Content Include="Areas\Core\Views\Mobile\Widgets\OrderPanel.cshtml" />
+    <Content Include="Areas\Core\Views\Mobile\Widgets\MessagingPreferences.cshtml" />
+    <Content Include="Areas\Core\Views\Mobile\Widgets\ImpersonationMenu.cshtml" />
+    <Content Include="Areas\Core\Views\Mobile\Widgets\ContactInfo.cshtml" />
+    <Content Include="Areas\Core\Views\Mobile\Support\Support.cshtml" />
+    <Content Include="Areas\Core\Views\Mobile\Messages\Messages.cshtml" />
+    <Content Include="Areas\Core\Views\IntegrationStatusPageActions\ShowRollBackExtractDialog.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\UserControls\ChartTypeChooser.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\EntityReport.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\EditorTemplates\TextBox.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\EditorTemplates\DropDown.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\EditorTemplates\DateRangeSlider.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\EditorTemplates\DateRangePicker.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\EditorTemplates\Checkbox%28nonfunctional%29.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\Dashboard\GridHeaderPageActions.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\Content.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\ChartGroupingOptions.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\AnalyticViewChart.cshtml" />
+    <Content Include="Areas\Core\Views\DisputeInvoice\DisputeInvoice.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Weather\Weather.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Weather\styles\artill_clean_icons.otf" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Weather\styles\artill_clean_icons-webfont-1.eot" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\VideoControl.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\RecentTradesMerged\RecentTradesMerged.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\PricesByLocation\PricesByLocation.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\PricesByLocation\Partial\DefaultPricesByLocationGrid.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Prices.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Prices-History-Merged.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\Partial\RecentlyProcessedOrders.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\Partial\PendingLimitOrders.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\Partial\DefaultOrderDisplay.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\Partial\Admin\RecentlyProcessedOrders.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\Partial\Admin\PendingLimitOrders.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\Partial\Admin\DefaultOrderDisplay.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\OrderDisplayGrids.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\GridsSplit\RecentlyClosedOrders.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\GridsSplit\OrdersPendingApproval.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\GridsSplit\OpenLimitOrders.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\GridsSplitAdmin\RecentlyClosedOrders.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\GridsSplitAdmin\OrdersPendingApproval.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\OrderDisplayGrids\GridsSplitAdmin\OpenLimitOrders.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Invoices\Invoices.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Invoices.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\CustomerManagement.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\CounterPartyNotes.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\ContactViewTemplate.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\ContactManagement.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Charts\TradePerformanceChart.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Charts\RackQuantity\RackQuantity.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Charts\RackQuantity.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Charts\PriceHistory.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Charts\CreditLine.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Charts\ContractQuantity\ContractQuantity.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Charts\ContractQuantity.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\Announcement.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\WidgetComponents\GenericWidget.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Dialogs\WidgetSettingsDialog.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Dialogs\Partial\WidgetSettingsDialogContents.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Dialogs\Partial\NewDashboardDialogContents.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Dialogs\Partial\DashboardSettingsDialogContents.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Dialogs\Partial\ChooseWidgetDialogContents.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Dialogs\NewDashboardDialog.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Dialogs\DashboardSettingsDialog.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Dialogs\ChooseWidgetDialog.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\DevComponents\SizeAndSave.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\DashboardTemplates\DefaultTemplate.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\ConfigurableDashboard.cshtml" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\UserMaintenance\UserMaintenance.cshtml" />
+    <Content Include="Areas\Admin\Views\UoMConversion\UoMConversion.cshtml" />
+    <Content Include="Areas\Admin\Views\TradeInstrument\TradeInstrument.cshtml" />
+    <Content Include="Areas\Admin\Views\Test\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SubscriptionMaintenance\SubscriptionMaintenance.cshtml" />
+    <Content Include="Areas\Admin\Views\Roles\Roles.cshtml" />
+    <Content Include="Areas\Admin\Views\RealTimePriceGeneration\RealTimePriceGeneration.cshtml" />
+    <Content Include="Areas\Admin\Views\QuartzSchedulerAdmin\QuartzSchedulerAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductMaintenance\ProductMaintenance.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductMaintenance\Partial\UnAssignedProductGrid.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductMaintenance\Partial\ProductGroupGrid.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductMaintenance\Partial\ProductGrid.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductLocationPreferences\ProductLocationPreferences.cshtml" />
+    <Content Include="Areas\Admin\Views\PricingProductsLocations\PricingProductsLocations.cshtml" />
+    <Content Include="Areas\Admin\Views\PeriodMaintenance\PeriodMaintenance.cshtml" />
+    <Content Include="Areas\Admin\Views\PageSetup\PageSetup.cshtml" />
+    <Content Include="Areas\Admin\Views\NotificationRegisters\NotificationRegisters.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuItems\MenuItems.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuItems\ManageRoles.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageRoles\ManageRoles.cshtml" />
+    <Content Include="Areas\Admin\Views\LoginHistoryReport\LoginHistoryReport.cshtml" />
+    <Content Include="Areas\Admin\Views\LoginHistoryDetails\LoginHistoryDetails.cshtml" />
+    <Content Include="Areas\Admin\Views\LocationMaintenance\Partial\ProductPreferences.cshtml" />
+    <Content Include="Areas\Admin\Views\LocationMaintenance\Partial\LocationGroupGrid.cshtml" />
+    <Content Include="Areas\Admin\Views\LocationMaintenance\Partial\LocationGrid.cshtml" />
+    <Content Include="Areas\Admin\Views\LocationMaintenance\LocationMaintenance.cshtml" />
+    <Content Include="Areas\Admin\Views\Labels\Labels.cshtml" />
+    <Content Include="Areas\Admin\Views\ExtractedPriceTypeMaintenance\SectionTitle.cshtml" />
+    <Content Include="Areas\Admin\Views\ExtractedPriceTypeMaintenance\ExtractedPriceTypeMaintenanceGrid.cshtml" />
+    <Content Include="Areas\Admin\Views\EntityView\EntityView.cshtml" />
+    <Content Include="Areas\Admin\Views\EntityDashboard\EntityDashboard.cshtml" />
+    <Content Include="Areas\Admin\Views\CounterParty\ProductLocationPreferences.cshtml" />
+    <Content Include="Areas\Admin\Views\CounterParty\InternalColleagueDefaults.cshtml" />
+    <Content Include="Areas\Admin\Views\CounterParty\CounterParty.cshtml" />
+    <Content Include="Areas\Admin\Views\CounterPartyTierAdjustment\CounterPartyTierAdjustmentDialog.cshtml" />
+    <Content Include="Areas\Admin\Views\CounterPartyLocationAdmin\CounterPartyLocationAdminDialog.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactInfoAdmin\ContactInfoAdminDialog.cshtml" />
+    <Content Include="Areas\Admin\Views\Collection\Collection.cshtml" />
+    <Content Include="Areas\Admin\Views\ApplicationAdmin\ClearCache.cshtml" />
+    <Content Include="Areas\Admin\Views\AnalyticView\AnalyticView.cshtml" />
+    <Content Include="App_Themes\common\fonts\weather\artill_clean_icons-webfont_iefix.eot" />
+    <Content Include="App_Themes\common\fonts\weather\artill_clean_icons-webfont.woff" />
+    <Content Include="App_Themes\common\fonts\weather\artill_clean_icons-webfont.ttf" />
+    <Content Include="App_Themes\common\fonts\weather\artill_clean_icons-webfont.eot" />
+    <Content Include="App_Themes\common\fonts\CenturyGothicStd.otf" />
+    <Content Include="App_Themes\common\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="App_Themes\common\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Themes\common\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Themes\common\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\glyphs\WebComponentsIcons.woff" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\glyphs\WebComponentsIcons.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\glyphs\WebComponentsIcons.eot" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\glyphs\KendoUIGlyphs.woff" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\glyphs\KendoUIGlyphs.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\glyphs\KendoUIGlyphs.eot" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="App_Themes\common\css\Kendo\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="App_Themes\common\css\font-awesome\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="App_Themes\common\css\font-awesome\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Themes\common\css\font-awesome\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Themes\common\css\font-awesome\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Themes\common\css\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="App_Themes\common\css\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="App_Themes\common\css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="App_Themes\common\css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="App_Themes\common\css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\DashboardTemplates\DefaultTableTemplate.cshtml" />
+    <Content Include="Areas\Core\Views\DisputeInvoice\DisputeInvoicePastAge.cshtml" />
+    <Content Include="App_Code\GravHtml.cshtml" />
+    <Content Include="Areas\Custom\Views\ConfigurableDashboard\Example.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\Shared\EditorTemplates\TextBox.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\Shared\EditorTemplates\TradeEntryPriceInstrument.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\ConfirmationDialog.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryConfirmCancel.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\TradeEntry\TradeEntryIndexInfoExtension.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\DashboardFeatureTour.cshtml" />
+    <Content Include="Areas\Admin\Views\LoggerAdmin\Logs.cshtml" />
+    <Content Include="Areas\Admin\Views\StatusAdmin\Status.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductMaintenance\Partial\UpdateAssociationsDialog.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\Shared\AdditionalProducts.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\Shared\GeneralInfo.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\Shared\ValidationMessages.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\Partial\PromptTradeExecutionFeatureTour.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Prompt\Partial\BuyNowValidationsContainer.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Shared\Reporting\DisplayBids.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Shared\Reporting\TradeGrid.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Shared\Reporting\TradePanel.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\AdditionalOptions\SetAdditionalOptions.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\Shared\AdditionalOptionInfo.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\Shared\ContractEntryInfo.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Entry\Shared\HeaderInfo.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Forward\Reporting\ShowTradeDetails\ConfirmChange.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Forward\Reporting\ShowTradeDetails\ForwardTradeDetails.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Forward\Shared\GeneralInfo.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Forward\Shared\ReadOnlyBidView.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Forward\Shared\ReadOnlyView.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Shared\AdditionalProducts.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\Shared\EditorTemplates\IndexPriceType.cshtml" />
+    <Content Include="App_Themes\Custom\css\theme_overrides.scss" />
+    <Content Include="App_Themes\Custom\css\_bootstrap_custom_variables.scss" />
+    <Content Include="App_Themes\Custom\css\_font_colors.scss" />
+    <Content Include="App_Themes\Custom\RadGrid.skin" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\bootstrap.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_float.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_navbar-align.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_size.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_align.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_background.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_display.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_float.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_position.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_text.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_alert.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_badge.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_button-group.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_buttons.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_card.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_carousel.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_close.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_code.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_custom-forms.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_dropdown.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_forms.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_functions.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_grid.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_images.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_input-group.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_jumbotron.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_list-group.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_media.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_mixins.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_modal.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_nav.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_navbar.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_pagination.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_popover.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_print.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_progress.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_reboot.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_root.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_tables.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_tooltip.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_transitions.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_type.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_utilities.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\scss\_variables.scss" />
+    <Content Include="App_Themes\common\css\bootstrap\bootstrap-overrides.scss" />
+    <Content Include="App_Themes\common\css\master.scss" />
+    <Content Include="App_Themes\common\css\analytics.scss" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="App_Themes\common\css\mobile.scss" />
+    <Content Include="App_Themes\common\css\master_components\entity_report.scss" />
+    <Content Include="App_Themes\common\css\master_components\horizontal_nav.scss" />
+    <Content Include="App_Themes\common\css\master_components\loading_animation.scss" />
+    <Content Include="App_Themes\common\css\master_components\misc.scss" />
+    <Content Include="App_Themes\common\css\master_components\scalable_master_body_styles.scss" />
+    <Content Include="App_Themes\common\css\master_components\toolbar_nav.scss" />
+    <Content Include="App_Themes\common\css\master_components\vertical_nav.scss" />
+    <Content Include="App_Themes\common\css\master_components\widget.scss" />
+    <Content Include="Areas\DeliveryRequest\Views\DeliveryRequest.cshtml" />
+    <Content Include="Areas\DeliveryRequest\Views\partial\_DeliveryRequestConfirmationPartial.cshtml" />
+    <Content Include="Areas\DeliveryRequest\Views\partial\_DeliveryRequestPartial.cshtml" />
+    <Content Include="Areas\DeliveryRequest\Views\partial\_DeliveryRequestSuccessfulPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\TradeEntryDefaultPrice\TradeEntryDefaultPrice.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\Widgets\RecentBols\RecentBols.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\EditorTemplates\DateTimeRangeSlider.cshtml" />
+    <Content Include="Areas\Login\Views\Login\Pin.cshtml" />
+    <Content Include="Areas\Login\Views\Login\PromptForPin.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceConfiguration\AllConfigurations.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceConfiguration\ManagePriceConfiguration\Dialog.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedPriceConfiguration\ManagePriceConfiguration\FullScreen.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\AllCalculatedValues.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\EditorTemplates\VariableName.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\ManageValue.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\Partial\MaintenanceGrid.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\Partial\UpdateOverrides.cshtml" />
+    <Content Include="Areas\Pricing\Views\PriceConfigurationLookup\AllLookups.cshtml" />
+    <Content Include="Areas\Pricing\Views\PriceConfigurationLookup\ManageLookup\ManageLookup.cshtml" />
+    <Content Include="Areas\Pricing\Views\PriceConfigurationLookup\ManageLookup\ManageLookupDialog.cshtml" />
+    <Content Include="Areas\Pricing\Views\PriceEntry\PriceEntry.cshtml" />
+    <Content Include="Areas\Pricing\Views\CalculatedValueConfiguration\DuplicateValue.cshtml" />
+    <Content Include="Areas\UserSetting\Views\AlternateDistributionList\AlternateDistributionList.cshtml" />
+    <Content Include="Areas\TradeEntry\Views\Shared\EditorTemplates\NumericTextBox.cshtml" />
+    <Content Include="Areas\Pricing\Views\TradeExecution\Mobile\Prompt\Shared\GeneralInfo.cshtml" />
+    <Content Include="Areas\Pricing\Views\PriceNotification\ErrorNotifications.cshtml" />
+    <Content Include="Areas\Pricing\Views\PriceNotification\NotificationSent.cshtml" />
+    <Content Include="Areas\Pricing\Views\PriceNotification\PriceNotificationMessages.cshtml" />
+    <Content Include="Areas\Pricing\Views\PriceNotification\ShowContactListDialog.cshtml" />
+    <Content Include="Areas\Pricing\Views\PriceNotification\ShowNotificationPricesDialog.cshtml" />
+    <Content Include="Areas\DeliveryRequest\Views\partial\_DeliveryRequestConfirmationModalPartial.cshtml" />
+    <Content Include="Areas\DeliveryRequest\Views\partial\_DeliveryRequestErrorModalPartial.cshtml" />
+    <Content Include="Areas\DeliveryRequest\Views\partial\_DeliveryRequestModalPartial.cshtml" />
+    <Content Include="Areas\DeliveryRequest\Views\partial\_DeliveryRequestSuccessfulModalPartial.cshtml" />
+    <Content Include="Areas\DeliveryRequest\Views\DeliveryRequestDetail.cshtml" />
+    <Content Include="Areas\DeliveryRequest\Views\ProductInputs.cshtml" />
+    <Content Include="Areas\Custom\Views\ConfigurableDashboard\RecentTradesMerged\CustomRecentTradesMerged.cshtml" />
+    <Content Include="Areas\Core\Views\EntityReport\EntityReportColumnModal.cshtml" />
+    <Content Include="Areas\Custom\Views\ConfigurableDashboard\BuyOrders.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\EditorTemplates\ContactManagementContactRow.cshtml" />
+    <Content Include="Areas\Core\Views\ConfigurableDashboard\EditorTemplates\CustomerManagementModel.cshtml" />
+    <Content Include="Areas\Custom\Views\CustomTruckAndRailQuote\CustomTruckAndRailQuote.cshtml" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\Admin\AdminPages.js" />
+    <Content Include="Scripts\bootstrap\datetimepicker\bootstrap-datetimepicker-standalone.css" />
+    <Content Include="Scripts\bootstrap\datetimepicker\bootstrap-datetimepicker.css" />
+    <Content Include="Scripts\bootstrap\datetimepicker\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap\datetimepicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="Scripts\bootstrap\datetimepicker\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap\datetimepicker\bootstrap-datetimepickerOverrides.css" />
+    <Content Include="Scripts\bootstrap\formhelpers\dist\css\bootstrap-formhelpers.css" />
+    <Content Include="Scripts\bootstrap\formhelpers\dist\css\bootstrap-formhelpers.min.css" />
+    <Content Include="Scripts\bootstrap\formhelpers\dist\img\bootstrap-formhelpers-countries.flags-LICENSE.txt" />
+    <Content Include="Scripts\bootstrap\formhelpers\dist\img\bootstrap-formhelpers-countries.flags.png" />
+    <Content Include="Scripts\bootstrap\formhelpers\dist\img\bootstrap-formhelpers-currencies.flags.png" />
+    <Content Include="Scripts\bootstrap\formhelpers\dist\img\bootstrap-formhelpers-googlefonts.png" />
+    <Content Include="Scripts\bootstrap\formhelpers\dist\js\bootstrap-formhelpers.js" />
+    <Content Include="Scripts\bootstrap\formhelpers\dist\js\bootstrap-formhelpers.min.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap\moment\moment.js" />
+    <Content Include="Scripts\bootstrap\plugins\affix.js" />
+    <Content Include="Scripts\bootstrap\plugins\alert.js" />
+    <Content Include="Scripts\bootstrap\plugins\button.js" />
+    <Content Include="Scripts\bootstrap\plugins\carousel.js" />
+    <Content Include="Scripts\bootstrap\plugins\collapse.js" />
+    <Content Include="Scripts\bootstrap\plugins\dropdown.js" />
+    <Content Include="Scripts\bootstrap\plugins\modal.js" />
+    <Content Include="Scripts\bootstrap\plugins\popover.js" />
+    <Content Include="Scripts\bootstrap\plugins\scrollspy.js" />
+    <Content Include="Scripts\bootstrap\plugins\tab.js" />
+    <Content Include="Scripts\bootstrap\plugins\tooltip.js" />
+    <Content Include="Scripts\bootstrap\plugins\transition.js" />
+    <Content Include="Scripts\bootstrap\switch\bootstrap-switch.css" />
+    <Content Include="Scripts\bootstrap\switch\bootstrap-switch.js" />
+    <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\chosen.jquery.min.js" />
+    <Content Include="Scripts\Cookie.js" />
+    <Content Include="Scripts\Custom.js" />
+    <Content Include="Scripts\Dashboard.js" />
+    <Content Include="Scripts\DateFormat.js" />
+    <Content Include="Scripts\DateJs\date.js" />
+    <Content Include="Scripts\fingerprint2.js" />
+    <Content Include="Scripts\fingerprint2.min.js" />
+    <Content Include="Scripts\Flickity\flickity-imagesloaded.js" />
+    <Content Include="Scripts\Flickity\flickity.css" />
+    <Content Include="Scripts\Flickity\flickity.pkgd.min.js" />
+    <Content Include="Scripts\FormatCurrency\formatCurrency.js" />
+    <Content Include="Scripts\Gravitate.js" />
+    <Content Include="Scripts\GravitateMobile.js" />
+    <Content Include="Scripts\GravitateMobile\CSSTransitions\GravitateMobile.js" />
+    <Content Include="Scripts\GravitateMobile\CSSTransitions\Transitions.css" />
+    <Content Include="Scripts\GravitateMobile\JqueryAnimateTransitions\GravitateMobile.css" />
+    <Content Include="Scripts\GravitateMobile\JqueryAnimateTransitions\GravitateMobile.js" />
+    <Content Include="Scripts\GravitateSecure.js" />
+    <Content Include="Scripts\hammer.min.js" />
+    <Content Include="Scripts\Highcharts\highcharts.js" />
+    <Content Include="Scripts\Highcharts\highcharts.min.js" />
+    <Content Include="Scripts\Highcharts\modules\data.js" />
+    <Content Include="Scripts\Highcharts\modules\data.src.js" />
+    <Content Include="Scripts\Highcharts\modules\drilldown.js" />
+    <Content Include="Scripts\Highcharts\modules\drilldown.src.js" />
+    <Content Include="Scripts\Highcharts\modules\exporting.js" />
+    <Content Include="Scripts\Highcharts\modules\exporting.src.js" />
+    <Content Include="Scripts\Highcharts\modules\funnel.js" />
+    <Content Include="Scripts\Highcharts\modules\funnel.src.js" />
+    <Content Include="Scripts\Highcharts\modules\heatmap.js" />
+    <Content Include="Scripts\Highcharts\modules\heatmap.src.js" />
+    <Content Include="Scripts\Highcharts\modules\no-data-to-display.js" />
+    <Content Include="Scripts\Highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\Highcharts\modules\solid-gauge.js" />
+    <Content Include="Scripts\Highcharts\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\HTML5Video\html5media.min.js" />
+    <Content Include="Scripts\InternalDashboard.js" />
+    <Content Include="Scripts\IntroJs\intro.js" />
+    <Content Include="Scripts\IntroJs\introjs.css" />
+    <Content Include="Scripts\IntroJs\introjsoverrides.css" />
+    <Content Include="Scripts\Joyride\jquery.cookie.js" />
+    <Content Include="Scripts\Joyride\jquery.joyride-2.1.js" />
+    <Content Include="Scripts\Joyride\Readme.txt" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\Jquery-Migrate\jquery-migrate-1.2.1.js" />
+    <Content Include="Scripts\Jquery-Migrate\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\Jquery-Mobile\Custom\jquery.mobile-DisableHashing.js" />
+    <Content Include="Scripts\Jquery-Mobile\images\ajax-loader.gif" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\action-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\action-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\alert-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\alert-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-d-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-d-l-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-d-l-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-d-r-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-d-r-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-d-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-l-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-l-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-r-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-r-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-u-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-u-l-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-u-l-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-u-r-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-u-r-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\arrow-u-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\audio-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\audio-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\back-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\back-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\bars-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\bars-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\bullets-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\bullets-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\calendar-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\calendar-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\camera-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\camera-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\carat-d-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\carat-d-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\carat-l-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\carat-l-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\carat-r-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\carat-r-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\carat-u-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\carat-u-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\check-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\check-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\clock-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\clock-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\cloud-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\cloud-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\comment-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\comment-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\delete-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\delete-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\edit-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\edit-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\eye-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\eye-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\forbidden-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\forbidden-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\forward-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\forward-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\gear-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\gear-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\grid-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\grid-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\heart-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\heart-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\home-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\home-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\info-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\info-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\location-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\location-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\lock-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\lock-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\mail-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\mail-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\minus-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\minus-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\navigation-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\navigation-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\phone-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\phone-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\plus-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\plus-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\power-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\power-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\recycle-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\recycle-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\refresh-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\refresh-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\search-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\search-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\shop-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\shop-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\star-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\star-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\tag-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\tag-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\user-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\user-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\video-black.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-png\video-white.png" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\action-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\action-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\alert-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\alert-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-d-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-d-l-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-d-l-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-d-r-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-d-r-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-d-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-l-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-l-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-r-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-r-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-u-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-u-l-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-u-l-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-u-r-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-u-r-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\arrow-u-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\audio-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\audio-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\back-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\back-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\bars-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\bars-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\bullets-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\bullets-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\calendar-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\calendar-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\camera-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\camera-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\carat-d-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\carat-d-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\carat-l-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\carat-l-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\carat-r-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\carat-r-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\carat-u-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\carat-u-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\check-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\check-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\clock-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\clock-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\cloud-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\cloud-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\comment-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\comment-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\delete-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\delete-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\edit-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\edit-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\eye-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\eye-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\forbidden-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\forbidden-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\forward-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\forward-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\gear-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\gear-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\grid-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\grid-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\heart-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\heart-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\home-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\home-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\info-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\info-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\location-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\location-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\lock-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\lock-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\mail-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\mail-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\minus-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\minus-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\navigation-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\navigation-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\phone-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\phone-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\plus-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\plus-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\power-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\power-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\recycle-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\recycle-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\refresh-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\refresh-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\search-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\search-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\shop-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\shop-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\star-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\star-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\tag-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\tag-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\user-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\user-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\video-black.svg" />
+    <Content Include="Scripts\Jquery-Mobile\images\icons-svg\video-white.svg" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile-1.4.5.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile-1.4.5.js" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile-1.4.5.min.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.external-png-1.4.5.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.external-png-1.4.5.min.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.icons-1.4.5.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.icons-1.4.5.min.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.inline-png-1.4.5.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.inline-png-1.4.5.min.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.inline-svg-1.4.5.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.inline-svg-1.4.5.min.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.structure-1.4.5.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.structure-1.4.5.min.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.theme-1.4.5.css" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile.theme-1.4.5.min.css" />
+    <Content Include="Scripts\jquery-ui-1.10.1.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-timepicker\jquery.ui.timepicker.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery.hammer-full.js" />
+    <Content Include="Scripts\jquery.hammer-full.min.js" />
+    <Content Include="Scripts\jquery.hammer.js" />
+    <Content Include="Scripts\jquery.hammer.min.js" />
+    <Content Include="Scripts\jquery.hammer.min.map" />
+    <Content Include="Scripts\jquery.hammer-full.min.map" />
+    <Content Include="Scripts\Jquery-Mobile\jquery.mobile-1.4.5.min.map" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.history.js" />
+    <Content Include="Scripts\jquery.jcache.js" />
+    <Content Include="Scripts\jquery.multiselect.filter.js" />
+    <Content Include="Scripts\jquery.multiselect.js" />
+    <Content Include="Scripts\jquery.powertip.js" />
+    <Content Include="Scripts\jquery.powertip.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\swiper\swiper.min.js.map" />
+    <Content Include="Scripts\loadingAnimation.cshtml" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\jszip.js" />
+    <Content Include="Scripts\Kendo\kendo.all.js" />
+    <Content Include="Scripts\Kendo\kendo.aspnetmvc.js" />
+    <Content Include="Scripts\Kendo\kendo.web.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Modernizr\modernizr-1.7.js" />
+    <Content Include="Scripts\Modernizr\modernizr-1.7.min.js" />
+    <Content Include="Scripts\Modernizr\modernizr-2.5.3.js" />
+    <Content Include="Scripts\Modernizr\modernizr-2.7.2.js" />
+    <Content Include="Scripts\msieHacks.js" />
+    <Content Include="Scripts\NumberFormatter.js" />
+    <Content Include="Scripts\Packery\draggabilly.pkgd.min.js" />
+    <Content Include="Scripts\Packery\imagesloaded.pkgd.min.js" />
+    <Content Include="Scripts\Packery\packery.pkgd.min.js" />
+    <Content Include="Scripts\SlickGrid\jquery.event.drag-2.0.min.js" />
+    <Content Include="Scripts\SlickGrid\slick.autotooltips.js" />
+    <Content Include="Scripts\SlickGrid\slick.cellcopymanager.js" />
+    <Content Include="Scripts\SlickGrid\slick.cellexternalcopymanager.js" />
+    <Content Include="Scripts\SlickGrid\slick.cellrangedecorator.js" />
+    <Content Include="Scripts\SlickGrid\slick.cellrangeselector.js" />
+    <Content Include="Scripts\SlickGrid\slick.cellselectionmodel.js" />
+    <Content Include="Scripts\SlickGrid\slick.checkboxselectcolumn.js" />
+    <Content Include="Scripts\SlickGrid\slick.core.js" />
+    <Content Include="Scripts\SlickGrid\slick.dataview.js" />
+    <Content Include="Scripts\SlickGrid\slick.editors.js" />
+    <Content Include="Scripts\SlickGrid\slick.formatters.js" />
+    <Content Include="Scripts\SlickGrid\slick.grid.js" />
+    <Content Include="Scripts\SlickGrid\slick.groupitemmetadataprovider.js" />
+    <Content Include="Scripts\SlickGrid\slick.headerbuttons.js" />
+    <Content Include="Scripts\SlickGrid\slick.headermenu.js" />
+    <Content Include="Scripts\SlickGrid\slick.remotemodel.js" />
+    <Content Include="Scripts\SlickGrid\slick.rowmovemanager.js" />
+    <Content Include="Scripts\SlickGrid\slick.rowselectionmodel.js" />
+    <Content Include="Scripts\Tableau\tableau_v8.js" />
+    <Content Include="Scripts\Tableau\tableau_v8.min.js" />
+    <Content Include="Scripts\toastr\toastr.js" />
+    <Content Include="Scripts\toastr\toastr.min.js" />
+    <Content Include="Views\Shared\favicon.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebConfigEncryption\DecryptWebConfigConnectionSettings.bat" />
+    <Content Include="WebConfigEncryption\EncryptWebConfigConnectionSettings.bat" />
+    <Content Include="Web.config.template" />
+    <Content Include="Views\Shared\ScalableMaster.cshtml" />
+    <Content Include="Views\Shared\PublicMaster.cshtml" />
+    <Content Include="Views\Shared\BootstrapMaster.cshtml" />
+    <Content Include="WinSCP.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="_ViewStart.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\UserControls\SettingsLinks.cshtml" />
+    <Content Include="Views\Shared\UserControls\Partial\ImpersonationMode.cshtml" />
+    <Content Include="Views\Shared\UserControls\Impersonation.cshtml" />
+    <Content Include="Views\Shared\UserControls\HeaderNav.cshtml" />
+    <Content Include="Views\Shared\UserControls\AdminLinks.cshtml" />
+    <Content Include="Views\Shared\ToastMessages.cshtml" />
+    <Content Include="Views\Shared\SetPassword.cshtml" />
+    <Content Include="Views\Shared\ReturnToPreviousPage.cshtml" />
+    <Content Include="Views\Shared\OldPasswordPartial.cshtml" />
+    <Content Include="Views\Shared\MessageBoxMessages.cshtml" />
+    <Content Include="Views\Shared\GoogleAnalytics.cshtml" />
+    <Content Include="Views\Shared\FeatureTour\JoyrideFeatureTourContainer.cshtml" />
+    <Content Include="Views\Shared\FeatureTour\IntroJsFeatureTourContainer.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UnitOfMeasure.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TradeTerm.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TradeEntryType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TradeEntryDateLogic.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ToUoM.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TelerikComboBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Roles.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Product.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PredicateType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PredicateTargetType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PaymentTerms.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ParentItem.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Operator.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MovementType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\KendoComboBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\FromUoM.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Frequency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EntityViewColumn.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EntityPredicate.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DestinationPageSetup.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DataType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ColumnType.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ActionType.cshtml" />
+    <Content Include="Views\Shared\CronBuilder.cshtml" />
+    <Content Include="Views\Shared\UserControls\ContactUs.cshtml" />
+    <Content Include="Views\Shared\UserControls\ContactUs_Extension.cshtml" />
+    <Content Include="Views\Shared\UserControls\HorizontalNav.cshtml" />
+    <Content Include="Views\Shared\UserControls\Toolbar.cshtml" />
+    <Content Include="Views\Shared\UserControls\VerticalNav.cshtml" />
+    <Content Include="Views\Shared\ContactInfo\Address.cshtml" />
+    <Content Include="ViewOverrides\Areas\UserSetting\Views\DistributionList\DistributionList.cshtml" />
+    <Content Include="ViewOverrides\Areas\Login\Views\Login\_LoginFooter.cshtml" />
+    <Content Include="Views\Shared\_fonts.cshtml" />
+    <Content Include="Views\Shared\UserControls\Footer.cshtml" />
+    <Content Include="ViewOverrides\Areas\Core\Views\EntityReport\CustomPaymentPageDetail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\Custom\images\icons\" />
+    <Folder Include="App_Themes\Custom\images\layout\header\" />
+    <Folder Include="Areas\Custom\EntityReportDataCustomizations\" />
+    <Folder Include="Areas\Custom\Views\CustomReport\" />
+    <Folder Include="Areas\Custom\Views\DemandForecast\" />
+    <Folder Include="Models\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="ViewOverrides\Areas\Core\TradePerformance\" />
+    <Folder Include="ViewOverrides\Areas\TradeEntry\Views\TradeEntry\" />
+    <Folder Include="ViewOverrides\Views\Shared\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Protected\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ActionMailer.Net, Version=0.7.4.0, Culture=neutral, PublicKeyToken=e62db3114c02a1c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\ActionMailer.Standalone.0.7.4\lib\Net40\ActionMailer.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="ActionMailer.Net.Mvc, Version=0.7.4.0, Culture=neutral, PublicKeyToken=e62db3114c02a1c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\ActionMailer.0.7.4\lib\Net40\ActionMailer.Net.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="ActionMailer.Net.Standalone, Version=0.7.4.0, Culture=neutral, PublicKeyToken=e62db3114c02a1c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\ActionMailer.Standalone.0.7.4\lib\Net40\ActionMailer.Net.Standalone.dll</HintPath>
+    </Reference>
+    <Reference Include="AdvancedStringBuilder, Version=0.1.0.0, Culture=neutral, PublicKeyToken=e818a2fc08933ddb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdvancedStringBuilder.0.1.0\lib\net45\AdvancedStringBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.9.11\lib\net45\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Box.V2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Box.V2.3.9.0\lib\net45\Box.V2.dll</HintPath>
+    </Reference>
+    <Reference Include="BundleTransformer.Core, Version=1.10.0.0, Culture=neutral, PublicKeyToken=973c344c93aac60d, processorArchitecture=MSIL">
+      <HintPath>..\packages\BundleTransformer.Core.1.10.0\lib\net40\BundleTransformer.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BundleTransformer.SassAndScss, Version=1.10.0.0, Culture=neutral, PublicKeyToken=973c344c93aac60d, processorArchitecture=MSIL">
+      <HintPath>..\packages\BundleTransformer.SassAndScss.1.10.0\lib\net40\BundleTransformer.SassAndScss.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.WcfIntegration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.WcfIntegrationFacility.4.1.0\lib\net45\Castle.Facilities.WcfIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor.Lifestyles, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.Lifestyles.0.4.0\lib\net45\Castle.Windsor.Lifestyles.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net208, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Log4Net208.3.4.1\lib\net40\Common.Logging.Log4Net208.dll</HintPath>
+    </Reference>
+    <Reference Include="CronExpressionDescriptor, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CronExpressionDescriptor.2.2.0\lib\netstandard1.1\CronExpressionDescriptor.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Flee.Net45, Version=1.0.0.0, Culture=neutral, PublicKeyToken=951a102ce2413032, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flee.1.2.2\lib\net45\Flee.Net45.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidationNA, Version=1.2.16.24816, Culture=neutral, PublicKeyToken=0950390b87309e14, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidationNA.1.2.16\lib\net40\FluentValidationNA.dll</HintPath>
+    </Reference>
+    <Reference Include="Fluentx, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fluentx.2.0.4\lib\Fluentx.dll</HintPath>
+    </Reference>
+    <Reference Include="Fluentx.Mvc, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fluentx.Mvc.1.0.4\lib\Fluentx.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="FromHeaderAttribute, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FromHeaderAttribute.2.0.4\lib\net45\FromHeaderAttribute.dll</HintPath>
+    </Reference>
+    <Reference Include="GenericParsing, Version=1.1.6.22888, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GenericParser.1.1.6\lib\net20\GenericParsing.dll</HintPath>
+    </Reference>
+    <Reference Include="GvIpc, Version=2.28.20.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Dependencies\GvIpc.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=61c49a1a9e79cc28, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlSanitizer.4.0.217\lib\net45\HtmlSanitizer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.12\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Kendo.Mvc, Version=2018.3.1017.545, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <HintPath>..\Dependencies\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="LibSassHost, Version=1.2.2.0, Culture=neutral, PublicKeyToken=3e24e88796a38e46, processorArchitecture=MSIL">
+      <HintPath>..\packages\LibSassHost.1.2.2\lib\net45\LibSassHost.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices.Auth, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Extensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dependencies\Microsoft.IdentityModel.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.3.0\lib\net451\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.3.0\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.3.0\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=3.1.1.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.3.1.1\lib\net451\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PreMailer.Net, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Dependencies\PreMailer.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Quartz, Version=2.6.1.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.2.6.1\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.4.1.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.4.1\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RouteDebugger, Version=2.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\routedebugger.2.1.4.0\lib\net40\RouteDebugger.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.DQE.SqlServer, Version=5.11.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\packages\SD.LLBLGen.Pro.DQE.SqlServer.5.11.1\lib\net452\SD.LLBLGen.Pro.DQE.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.11.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.11.1\lib\net452\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.4.9.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.4.9\lib\SpreadsheetLight.dll</HintPath>
+    </Reference>
+    <Reference Include="Sustainsys.Saml2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sustainsys.Saml2.1.0.0\lib\net45\Sustainsys.Saml2.dll</HintPath>
+    </Reference>
+    <Reference Include="Sustainsys.Saml2.HttpModule, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sustainsys.Saml2.HttpModule.1.0.0\lib\net45\Sustainsys.Saml2.HttpModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Swagger.Net, Version=8.3.25.402, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swagger-Net.8.3.25.402\lib\net45\Swagger.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.identitymodel.services" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.3.0\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Linq.Dynamic, Version=1.1.20.26187, Culture=neutral, PublicKeyToken=b72be0322d1b32a8, processorArchitecture=MSIL">
+      <HintPath>..\packages\AK.System.Linq.Dynamic.1.1.20.1\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TimeZoneConverter, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.2.3.0\lib\net45\TimeZoneConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneNames, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneNames.3.3.0\lib\net45\TimeZoneNames.dll</HintPath>
+    </Reference>
+    <Reference Include="WebApiThrottle, Version=1.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebApiThrottle.1.5.4\lib\net45\WebApiThrottle.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="WinSCPnet, Version=1.4.1.7995, Culture=neutral, PublicKeyToken=2271ec4a3c56d0bf, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinSCP.5.11.3\lib\WinSCPnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Navigation.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Navigation.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Grid.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Grid.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\General.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>General.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Controls.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Controls.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Buttons.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Buttons.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Custom.Gravitate.Domain.Adapter.DAL\Custom.Gravitate.Domain.Adapter.DAL.csproj">
+      <Project>{a2ac2b6c-d511-4b70-b98f-493aca855157}</Project>
+      <Name>Custom.Gravitate.Domain.Adapter.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Custom.Gravitate.JSON\Custom.Gravitate.JSON.csproj">
+      <Project>{3bb0abda-c273-4c16-bb81-c73157a6de9e}</Project>
+      <Name>Custom.Gravitate.JSON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Custom.Gravitate.Library\Custom.Gravitate.Library.csproj">
+      <Project>{4f788a31-273a-4657-b909-e063c69d7381}</Project>
+      <Name>Custom.Gravitate.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Custom.Gravitate.Notification\Custom.Gravitate.Notification.csproj">
+      <Project>{4e25ace3-485b-4d2e-b806-81b0d91d4101}</Project>
+      <Name>Custom.Gravitate.Notification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Custom.Gravitate.WCF\Custom.Gravitate.WCF.csproj">
+      <Project>{af62c77d-e9ac-4f72-aab2-88d0f1899f3f}</Project>
+      <Name>Custom.Gravitate.WCF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Domain.Adapter.DAL\Gravitate.Domain.Adapter.DAL.csproj">
+      <Project>{7777ae36-7883-4149-a355-8e3dc8099490}</Project>
+      <Name>Gravitate.Domain.Adapter.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Domain.Adapter\DatabaseGeneric\Gravitate.Domain.Adapter.csproj">
+      <Project>{e82285eb-ccd5-40eb-b1fe-64443eedf6dc}</Project>
+      <Name>Gravitate.Domain.Adapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Domain.Adapter\DatabaseSpecific\Gravitate.Domain.AdapterDBSpecific.csproj">
+      <Project>{6b9b626b-eddd-4e97-9dc9-8b92f63d80e6}</Project>
+      <Name>Gravitate.Domain.AdapterDBSpecific</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Domain.CoreModels\Gravitate.Domain.CoreModel.Persistence\Gravitate.Domain.CoreModel.Persistence.csproj">
+      <Project>{483ac63a-9e74-4a24-8681-5d4978bdd01d}</Project>
+      <Name>Gravitate.Domain.CoreModel.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Domain.CoreModels\Gravitate.Domain.CoreModel\Gravitate.Domain.CoreModel.csproj">
+      <Project>{a13a9026-bed8-495f-aa81-0c44b1a5fc0b}</Project>
+      <Name>Gravitate.Domain.CoreModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.EntityView\Gravitate.EntityView.csproj">
+      <Project>{3dc8272b-eef6-4fd7-9860-53c31946d62d}</Project>
+      <Name>Gravitate.EntityView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Highchart.UI\Gravitate.Highchart.csproj">
+      <Project>{1738b35c-8b8d-47ad-acc9-cf0e8480b639}</Project>
+      <Name>Gravitate.Highchart</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Integration.RA.DAL\DatabaseGeneric\Gravitate.Integration.RA.DAL.csproj">
+      <Project>{ebda2d38-47dc-45f0-8507-53beb8da1e65}</Project>
+      <Name>Gravitate.Integration.RA.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Integration.RA\Gravitate.Integration.RA.csproj">
+      <Project>{12b443aa-0aed-450a-9f07-d07d644ff473}</Project>
+      <Name>Gravitate.Integration.RA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.JSON\Gravitate.JSON.csproj">
+      <Project>{4a937e7d-7620-4875-9576-fa8a40249a52}</Project>
+      <Name>Gravitate.JSON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Library\Gravitate.Library.csproj">
+      <Project>{2a0d2dca-05a2-43e6-bc72-b96444c21f59}</Project>
+      <Name>Gravitate.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Nexmo\Gravitate.Nexmo.csproj">
+      <Project>{53ef544a-f6b6-4df3-bcb3-4e2638e33c2a}</Project>
+      <Name>Gravitate.Nexmo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Notification\Gravitate.Notification.csproj">
+      <Project>{fe5fb36d-51c8-4f24-95ff-e87b55afe24a}</Project>
+      <Name>Gravitate.Notification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Quartz.Server\Gravitate.Quartz.Server.csproj">
+      <Project>{0eb2df22-f30d-4703-b554-99863505c65f}</Project>
+      <Name>Gravitate.Quartz.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Security\Gravitate.Security.csproj">
+      <Project>{8a838176-7ce8-43f4-85b4-a9cc713f4e64}</Project>
+      <Name>Gravitate.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Services\Gravitate.Services.csproj">
+      <Project>{f1d5b1cb-aac6-46ae-a406-56dc550327cf}</Project>
+      <Name>Gravitate.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.WCF\Gravitate.WCF.csproj">
+      <Project>{335bb75f-4af1-4336-97a5-9f689a516f0f}</Project>
+      <Name>Gravitate.WCF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.WebAPI\Gravitate.WebAPI.csproj">
+      <Project>{effc124f-08e5-484b-a753-4a709c2a1db3}</Project>
+      <Name>Gravitate.WebAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Website\Gravitate.Website.csproj">
+      <Project>{c7728065-5dbc-45ce-8880-ca317608eac5}</Project>
+      <Name>Gravitate.Website</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Web\Gravitate.Web.csproj">
+      <Project>{56c01c7c-8572-4a0f-8322-b026bb3ea9cc}</Project>
+      <Name>Gravitate.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61442</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55066/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>echo Build Finished  $([System.DateTime]::Now)</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\LibSassHost.Native.win-x64.1.2.0\build\LibSassHost.Native.win-x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibSassHost.Native.win-x64.1.2.0\build\LibSassHost.Native.win-x64.props'))" />
+    <Error Condition="!Exists('..\packages\LibSassHost.Native.win-x86.1.2.0\build\LibSassHost.Native.win-x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibSassHost.Native.win-x86.1.2.0\build\LibSassHost.Native.win-x86.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\NETStandard.Library.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
