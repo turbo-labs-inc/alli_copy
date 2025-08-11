@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Deterministic>True</Deterministic>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12B443AA-0AED-450A-9F07-D07D644FF473}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gravitate.Integration.RA</RootNamespace>
+    <AssemblyName>Gravitate.Integration.RA</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.9.11\lib\net45\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Box.V2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Box.V2.3.9.0\lib\net45\Box.V2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.WcfIntegration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.WcfIntegrationFacility.4.1.0\lib\net45\Castle.Facilities.WcfIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor.Lifestyles, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.Lifestyles.0.4.0\lib\net45\Castle.Windsor.Lifestyles.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Flee.Net45, Version=1.0.0.0, Culture=neutral, PublicKeyToken=951a102ce2413032, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flee.1.2.2\lib\net45\Flee.Net45.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidationNA, Version=1.2.16.24816, Culture=neutral, PublicKeyToken=0950390b87309e14, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidationNA.1.2.16\lib\net40\FluentValidationNA.dll</HintPath>
+    </Reference>
+    <Reference Include="GenericParsing, Version=1.1.6.22888, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GenericParser.1.1.6\lib\net20\GenericParsing.dll</HintPath>
+    </Reference>
+    <Reference Include="GvIpc, Version=2.28.20.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Dependencies\GvIpc.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=61c49a1a9e79cc28, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlSanitizer.4.0.217\lib\net45\HtmlSanitizer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.12\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.3.0\lib\net451\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.3.0\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.3.0\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=3.1.1.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.3.1.1\lib\net451\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.DQE.SqlServer, Version=5.11.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\packages\SD.LLBLGen.Pro.DQE.SqlServer.5.11.1\lib\net452\SD.LLBLGen.Pro.DQE.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.11.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.11.1\lib\net452\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.4.9.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.4.9\lib\SpreadsheetLight.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.3.0\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic, Version=1.1.20.26187, Culture=neutral, PublicKeyToken=b72be0322d1b32a8, processorArchitecture=MSIL">
+      <HintPath>..\packages\AK.System.Linq.Dynamic.1.1.20.1\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TimeZoneConverter, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneConverter.2.3.0\lib\net45\TimeZoneConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="TimeZoneNames, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimeZoneNames.3.3.0\lib\net45\TimeZoneNames.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstraction\BaseIncrementalIntegration.cs" />
+    <Compile Include="Abstraction\BaseIntegration.cs" />
+    <Compile Include="Abstraction\IntegrationStatus.cs" />
+    <Compile Include="BookIntegration.cs" />
+    <Compile Include="CalendarIntegration.cs" />
+    <Compile Include="CodeSetIntegration.cs" />
+    <Compile Include="CounterPartyLocationIntegration.cs" />
+    <Compile Include="CustomInvoiceIntegration.cs" />
+    <Compile Include="DistributionListIntegration.cs" />
+    <Compile Include="EftIntegration.cs" />
+    <Compile Include="InvoiceDocumentIntegration.cs" />
+    <Compile Include="PaymentTermIntegration.cs" />
+    <Compile Include="PriceServiceSetupIntegration.cs" />
+    <Compile Include="BillOfLadingIntegration.cs" />
+    <Compile Include="InvoiceIntegration.cs" />
+    <Compile Include="PriceIntegration.cs" />
+    <Compile Include="LogisticsPriceIntegration.cs" />
+    <Compile Include="ProductLocationIntegration.cs" />
+    <Compile Include="TradeDocumentIntegration.cs" />
+    <Compile Include="TradeIntegration.cs" />
+    <Compile Include="ColleagueIntegration.cs" />
+    <Compile Include="CounterPartyIntegration.cs" />
+    <Compile Include="LocationIntegration.cs" />
+    <Compile Include="TradePriceTypeIntegration.cs" />
+    <Compile Include="TradePriceValuationRuleIntegration.cs" />
+    <Compile Include="UnitOfMeasureIntegration.cs" />
+    <Compile Include="CurrencyIntegration.cs" />
+    <Compile Include="IntegrationManager.cs" />
+    <Compile Include="ProductIntegration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UOMConversion.cs" />
+    <Compile Include="Windsor\DALQueryableActivator.cs" />
+    <Compile Include="Windsor\IntegrationClientActivator.cs" />
+    <Compile Include="Windsor\IntegrationContainer.cs" />
+    <Compile Include="Windsor\IntegrationInstaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Custom.Gravitate.Library\Custom.Gravitate.Library.csproj">
+      <Project>{4f788a31-273a-4657-b909-e063c69d7381}</Project>
+      <Name>Custom.Gravitate.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Custom.Gravitate.WCF\Custom.Gravitate.WCF.csproj">
+      <Project>{af62c77d-e9ac-4f72-aab2-88d0f1899f3f}</Project>
+      <Name>Custom.Gravitate.WCF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Domain.Adapter.DAL\Gravitate.Domain.Adapter.DAL.csproj">
+      <Project>{7777ae36-7883-4149-a355-8e3dc8099490}</Project>
+      <Name>Gravitate.Domain.Adapter.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Domain.Adapter\DatabaseGeneric\Gravitate.Domain.Adapter.csproj">
+      <Project>{e82285eb-ccd5-40eb-b1fe-64443eedf6dc}</Project>
+      <Name>Gravitate.Domain.Adapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Domain.Adapter\DatabaseSpecific\Gravitate.Domain.AdapterDBSpecific.csproj">
+      <Project>{6b9b626b-eddd-4e97-9dc9-8b92f63d80e6}</Project>
+      <Name>Gravitate.Domain.AdapterDBSpecific</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Domain.CoreModels\Gravitate.Domain.CoreModel.Persistence\Gravitate.Domain.CoreModel.Persistence.csproj">
+      <Project>{483ac63a-9e74-4a24-8681-5d4978bdd01d}</Project>
+      <Name>Gravitate.Domain.CoreModel.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Domain.CoreModels\Gravitate.Domain.CoreModel\Gravitate.Domain.CoreModel.csproj">
+      <Project>{a13a9026-bed8-495f-aa81-0c44b1a5fc0b}</Project>
+      <Name>Gravitate.Domain.CoreModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.EntityView\Gravitate.EntityView.csproj">
+      <Project>{3dc8272b-eef6-4fd7-9860-53c31946d62d}</Project>
+      <Name>Gravitate.EntityView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Integration.RA.DAL\DatabaseGeneric\Gravitate.Integration.RA.DAL.csproj">
+      <Project>{ebda2d38-47dc-45f0-8507-53beb8da1e65}</Project>
+      <Name>Gravitate.Integration.RA.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Integration.RA.DAL\DatabaseSpecific\Gravitate.Integration.RA.DALDBSpecific.csproj">
+      <Project>{14c79ebb-ea78-4d06-89db-9549ee076dd4}</Project>
+      <Name>Gravitate.Integration.RA.DALDBSpecific</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Library\Gravitate.Library.csproj">
+      <Project>{2a0d2dca-05a2-43e6-bc72-b96444c21f59}</Project>
+      <Name>Gravitate.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Nexmo\Gravitate.Nexmo.csproj">
+      <Project>{53ef544a-f6b6-4df3-bcb3-4e2638e33c2a}</Project>
+      <Name>Gravitate.Nexmo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Notification\Gravitate.Notification.csproj">
+      <Project>{fe5fb36d-51c8-4f24-95ff-e87b55afe24a}</Project>
+      <Name>Gravitate.Notification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Security\Gravitate.Security.csproj">
+      <Project>{8a838176-7ce8-43f4-85b4-a9cc713f4e64}</Project>
+      <Name>Gravitate.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.Services\Gravitate.Services.csproj">
+      <Project>{f1d5b1cb-aac6-46ae-a406-56dc550327cf}</Project>
+      <Name>Gravitate.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gravitate.WCF\Gravitate.WCF.csproj">
+      <Project>{335bb75f-4af1-4336-97a5-9f689a516f0f}</Project>
+      <Name>Gravitate.WCF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
